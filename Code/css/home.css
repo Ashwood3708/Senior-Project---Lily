@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+.full-nav{
+    /* #002D74, #003b99 */
+    overflow: hidden;
+    background-color: #002D74;
+}
+.left-nav{
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 42px 56px;
+    text-decoration: none;
+    font-size: 32px;
+    letter-spacing: 130px;
+    font-family: 'Roboto', SansSerif, sans-serif;
+
+}
+
+.right-nav{
+    float: right;
+    padding: 0;
+}

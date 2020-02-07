@@ -10,10 +10,9 @@ div{
     display: block;
 }
 body{
-    background: #002D74;
-    background: linear-gradient(to top, #002D74, #003b99);
+    /* #002D74, #003b99 */
     background-size: cover;
-    background-attachment: fixed;
+    background: linear-gradient(to top, #000000, #000000) fixed;
 }
 .center{
     display: block;
