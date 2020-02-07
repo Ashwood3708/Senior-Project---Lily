@@ -13,7 +13,7 @@ body{
     padding: 42px 56px;
     text-decoration: none;
     font-size: 32px;
-    letter-spacing: 130px;
+    letter-spacing: 10px;
     font-family: 'Roboto', SansSerif, sans-serif;
 
 }
@@ -21,4 +21,14 @@ body{
 .right-nav{
     float: right;
     padding: 0;
+}
+.header{
+    text-align: center;
+}
+
+.table-info{
+    width: 35%;
+    margin: 3em auto;
+    background: rgba(0, 0, 0, 0.18);
+    background-size: cover;
 }
