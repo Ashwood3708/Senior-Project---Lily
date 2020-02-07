@@ -24,11 +24,30 @@ body{
 }
 .header{
     text-align: center;
+
 }
 
 .table-info{
+    font-size: 0.9em;
+    color: #ffffff;
     width: 35%;
     margin: 3em auto;
-    background: rgba(0, 0, 0, 0.18);
+    background: #FDB827;
     background-size: cover;
+    border-spacing: 0;
+    font-family: 'Roboto', SansSerif, sans-serif;
+}
+
+input[type="submit"]{
+    font-size: 0.9em;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.18);;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.8em;
+    width: 100%;
+    margin: 0;
+    letter-spacing: 4px;
+    font-family: 'Roboto', SansSerif, sans-serif;
 }
