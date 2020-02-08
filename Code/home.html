@@ -14,6 +14,7 @@
     </script>
     <link href="css/home.css" rel="stylesheet" type="text/css" media="all">
 </head>
+<body>
 <div class="full-nav">
     <a class="left-nav">INFORMATION</a>
     <div class="right-nav">
@@ -37,25 +38,38 @@
         </tr>
         <tr class="header">
             <td><a href="files/senior_audit.pdf" target="_blank">View</a></td>
-            <td><a href="files/senior_audit.pdf" download="files/senior_audit.pdf">Download</a></td>
+            <td><a href="files/senior_audit.pdf" download="files/senior_audit.pdf" class="float-right">Download</a></td>
         </tr>
         <tr class="header">
             <td colspan="2"><b>Recommendations</b></td>
         </tr>
         <tr>
-            <td>List</td>
+            <td>
+                <ul>
+                    <li>Take MATH 341 Next</li>
+                    <li>Take a Proper Science Next</li>
+                    <li>Take SPCH 250 Next</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="header">
+            <td colspan="2"><b>Pre-Requisitions</b></td>
+        </tr>
+        <tr class="header">
+            <td colspan="2"><object width="450" height="300" name="prereqs" type="text/html" data="ROBbery_dummy_prereqs.html"></object></td>
+        </tr>
+        <tr class="header">
+            <td colspan="2"><a href="https://www.ncat.edu/" target="_blank">Browse Here For More Info</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<div class="table-info header">
-    <h1>Pre-Requisitions</h1>
-    <object width="500" height="400" name="prereqs" type="text/html" data="ROBbery_dummy_prereqs.html"></object>
-</div>
-<div class="table-info header">
-    <a href="https://www.ncat.edu/" target="_blank">Browse Here For More Info</a>
-</div>
-<body>
+    <div class="table-info">
+        <form name="form" action="home.html" method="post">
 
+            <input type="submit" value="SUBMIT" onclick="">
+
+        </form>
+    </div>
 </body>
 </html>
