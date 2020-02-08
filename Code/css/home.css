@@ -51,3 +51,14 @@ input[type="submit"]{
     letter-spacing: 4px;
     font-family: 'Roboto', SansSerif, sans-serif;
 }
+a:link{
+    font-size: 0.9em;
+    color: #ffffff;
+    font-family: 'Roboto', SansSerif, sans-serif;
+}
+
+a:visited{
+    font-size: 0.9em;
+    color: #002D74;
+    font-family: 'Roboto', SansSerif, sans-serif;
+}
