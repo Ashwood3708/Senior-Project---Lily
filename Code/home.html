@@ -13,8 +13,10 @@
             window.scrollTo(0,1); }
     </script>
     <link href="css/home.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="JavaScript/read.js"  media="all"></script>
+
 </head>
-<body>
+<body onload="displayInfo()">
 <div class="full-nav">
     <a class="left-nav">INFORMATION</a>
     <div class="right-nav">
@@ -23,15 +25,15 @@
 
 </div>
 <div>
-    <table class="table-info" cellpadding="10">
+    <table class="table-info" cellpadding="10" id="table">
         <tbody>
         <tr class="header">
             <td><b>Cumulative GPA</b></td>
             <td><b>Major GPA</b></td>
         </tr>
         <tr class="header">
-            <td>3.75</td>
-            <td>3.85</td>
+            <td></td>
+            <td></td>
         </tr>
         <tr class="header">
             <td colspan="2"><b>Senior Audit Form</b></td>
@@ -44,13 +46,7 @@
             <td colspan="2"><b>Recommendations</b></td>
         </tr>
         <tr>
-            <td>
-                <ul>
-                    <li>Take MATH 341 Next</li>
-                    <li>Take a Proper Science Next</li>
-                    <li>Take SPCH 250 Next</li>
-                </ul>
-            </td>
+            <td></td>
         </tr>
         <tr class="header">
             <td colspan="2"><b>Pre-Requisitions</b></td>
