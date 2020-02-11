@@ -12,7 +12,7 @@ div{
 body{
     /* #002D74, #003b99 */
     background-size: cover;
-    background: linear-gradient(to top, #000000, #000000) fixed;
+    background: linear-gradient(to top, #002D74, #000000) fixed;
 }
 .center{
     display: block;
@@ -53,7 +53,7 @@ input[type="submit"]{
     cursor: pointer;
     padding: 0.8em;
     width: 100%;
-    margin: 2em 0;
+    margin: 2em auto;
     letter-spacing: 4px;
     font-family: 'Roboto', SansSerif, sans-serif;
 }
