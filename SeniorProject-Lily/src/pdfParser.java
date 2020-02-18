@@ -1,20 +1,28 @@
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Scanner;
+
 
 public class pdfParser {
-    HashSet<String> gradeList = new HashSet();
-    String major = "undeclared";
-    String totalGPA = "";
-    int numOfClasses = 0;
-    ArrayList<Class> list = new ArrayList();
+    private HashSet<String> gradeList;
+    private Student person;
+    private int numOfClasses;
 
-    public void read() throws IOException {
+    public pdfParser(){
+        gradeList = new HashSet();
+         person = new Student();
+         numOfClasses = 0;
         fillHash();
+    }
+
+    //parses PDF
+    public void read() throws IOException {
+
         try (PDDocument document = PDDocument.load(new File("AcademicTranscript.pdf"))) {
             document.getClass();
 
@@ -26,11 +34,11 @@ public class pdfParser {
                 for (int i = 0; i < lines.length; i++) {
 
                     if (lines[i].contains("Major:")) { //grabs major
-                        major = lines[i].substring(6).trim();
+                        person.setMajor(lines[i].substring(6).trim());
                     }
                     if (lines[i].equals("Overall:")) {//grabs gpa
                         int end = lines[i + 1].length();
-                        totalGPA = lines[i + 1].substring(end - 4, end).trim();
+                        person.setTotalGPA(lines[i + 1].substring(end - 4, end).trim());
                     }
                     if (lines[i].equals("R")) {  //indicates when classes appear
                         //loop to grab all classses
@@ -57,7 +65,8 @@ public class pdfParser {
                                 temp.grade = items[y++].trim();
                                 temp.creditHours= Double.parseDouble( items2[0].trim());
                                 temp.finalCredit= Double.parseDouble( items2[1].trim());
-                                list.add(temp);
+                                person.getList().add(temp);
+
                                 numOfClasses++;
                             }
 
@@ -65,13 +74,20 @@ public class pdfParser {
                         }
                     }
                 }
-
-
-//                System.out.println(pdfFileInText);
             }
 
         }
+        person.setNumOfClasses(numOfClasses);
 
+    }
+
+    //parses textFile
+    //still need to complete
+    public void read(File text) throws FileNotFoundException {
+        Scanner scan = new Scanner(text);
+        while(scan.hasNext()){
+
+        }
     }
 
     public void fillHash() {
@@ -91,7 +107,7 @@ public class pdfParser {
         gradeList.add("F-");
         gradeList.add("W");
         gradeList.add("I");
-
+//transfer credits
         gradeList.add("TA");
         gradeList.add("TA-");
         gradeList.add("TB+");
@@ -113,12 +129,12 @@ public class pdfParser {
     @Override
     public String toString(){
         String k = System.lineSeparator();
-        String m = "major is: " + major +k;
-        m+= "totalGPA is: " + totalGPA  +k;
-        m+= "totalClasses is: " + numOfClasses +k;
+        String m = "major is: " + person.getMajor() +k;
+        m+= "totalGPA is: " + person.getTotalGPA() +k;
+        m+= "totalClasses is: " + person.getNumOfClasses() +k;
         m+= "class List:" +k;
 
-        for(Class f: list){
+        for(Class f: person.getList()){
             m+= f.toString() +k;
         }
         return m;

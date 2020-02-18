@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class Selenium {
 
+    //still need error case
+
     public Selenium() throws InterruptedException, IOException {
         //access site through chrome.exe
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -45,15 +47,14 @@ public class Selenium {
 
         //Scrape transcript text
         String str = driver.findElement(By.className("pagebodydiv")).getText();
-        usingBufferedWritter(str);
+        writeToText(str);
         driver.quit();
 
     }
 
-    public static void usingBufferedWritter(String rock) throws IOException
-    {
+    public static void writeToText(String buffer) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("transcript.txt"));
-        writer.write(rock);
+        writer.write(buffer);
         writer.close();
     }
 }
