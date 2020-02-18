@@ -30,8 +30,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/pdfbox-app-2.0.18.jar!/" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/selenium-java-3.141.59/geckodriver-v0.26.0-win64" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
@@ -48,7 +48,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SeniorProject-Lily" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="runPdfParser" type="Java Scratch">
       <option name="MAIN_CLASS_NAME" value="main.java" />
       <module name="SeniorProject-Lily" />
@@ -57,6 +64,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Java Scratch.runPdfParser" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -68,7 +84,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581453273271</updated>
-      <workItem from="1581453282433" duration="1773000" />
+      <workItem from="1581453282433" duration="2648000" />
+      <workItem from="1581626457411" duration="12254000" />
+      <workItem from="1581970346111" duration="5815000" />
+      <workItem from="1582045253207" duration="205000" />
     </task>
     <servers />
   </component>
@@ -80,7 +99,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

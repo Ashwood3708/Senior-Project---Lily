@@ -1,0 +1,59 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Selenium {
+
+    public Selenium() throws InterruptedException, IOException {
+        //access site through chrome.exe
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://ssbprod-ncat.uncecs.edu/pls/NCATPROD/twbkwbis.P_WWWLogin");
+
+        //login
+        WebElement studentId = driver.findElement(By.name("sid"));
+        WebElement pin= driver.findElement(By.name("PIN"));
+        studentId.sendKeys("950350071");
+        pin.sendKeys("255175");
+        pin.submit();
+
+        //locate transcript
+
+        //--click Student
+        String hrefLink= driver.findElement(By.xpath("//a[@href='/pls/NCATPROD/twbkwbis.P_GenMenu?name=bmenu.P_StuMainMnu']")).getAttribute("href");
+        driver.get(hrefLink);
+
+
+        //--click Student Records
+        hrefLink= driver.findElement(By.xpath("//a[@href='/pls/NCATPROD/twbkwbis.P_GenMenu?name=bmenu.P_AdminMnu']")).getAttribute("href");
+        driver.get(hrefLink);
+
+
+        //--click Transcript
+        hrefLink= driver.findElement(By.xpath("//a[@href='/pls/NCATPROD/bwskotrn.P_ViewTermTran']")).getAttribute("href");
+        driver.get(hrefLink);
+        //Thread.sleep(1000);  // Let the user actually see something!
+
+        //--click submit btn
+        driver.findElement(By.cssSelector("input[type='submit'][value='Submit']")).click();
+        //Thread.sleep(1000);  //should see transcript now
+
+        //Scrape transcript text
+        String str = driver.findElement(By.className("pagebodydiv")).getText();
+        usingBufferedWritter(str);
+        driver.quit();
+
+    }
+
+    public static void usingBufferedWritter(String rock) throws IOException
+    {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("transcript.txt"));
+        writer.write(rock);
+        writer.close();
+    }
+}
