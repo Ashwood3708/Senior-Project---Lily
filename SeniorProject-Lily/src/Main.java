@@ -2,11 +2,13 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
-        /*pdfParser g = new pdfParser();
-        g.read();
+        //Selenium run = new Selenium();
+        pdfParser g = new pdfParser();
+        g.readTxt("transcript.txt");
+
         String print = g.toString();
         System.out.print(print);
-        */
-         Selenium run = new Selenium();
+
+
     }
 }

@@ -28,6 +28,10 @@
   <component name="ProjectId" id="1Xg2ADuqDTfAWZ9M5tJevpzlgam" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/selenium-java-3.141.59/geckodriver-v0.26.0-win64" />
@@ -88,7 +92,8 @@
       <workItem from="1581626457411" duration="12254000" />
       <workItem from="1581970346111" duration="5815000" />
       <workItem from="1582045253207" duration="1405000" />
-      <workItem from="1582058928300" duration="1094000" />
+      <workItem from="1582058928300" duration="2204000" />
+      <workItem from="1582574686632" duration="4701000" />
     </task>
     <servers />
   </component>
