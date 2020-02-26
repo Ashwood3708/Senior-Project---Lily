@@ -20,7 +20,7 @@ function getInfo(){
     // send to java fail
     // get info
     // send to info funtion
-    if((banner == '950336183') && (pin == '092298')){
+    if((banner == '') && (pin == '')){
         //send to java file
         setInfo(3.75, 3,90, "Take MATH 341 Next", "Take a Proper Science Next", "Take SPCH 250 Next");
         document.location.href = "home.html";
