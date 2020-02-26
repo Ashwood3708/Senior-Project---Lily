@@ -13,6 +13,7 @@
             window.scrollTo(0,1); }
     </script>
     <link href="css/login.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="JavaScript/read.js"  media="all"></script>
 
 </head>
 
@@ -23,11 +24,11 @@
         <div class="login-content">
              <!--Change action to go through selenium once it is implemented -->
             <form name="form" action="home.html" method="post">
-                <input class="text banner" type="text" name="banner" placeholder="Banner ID">
+                <input class="text banner" id="bannerID" type="text" name="banner" placeholder="Banner ID">
 
-                <input class="text" type="password" name="pin" placeholder="PIN">
+                <input class="text" id="userPIN" type="password" name="pin" placeholder="PIN">
 
-                <input type="submit" value="SUBMIT">
+                <input type="submit" value="SUBMIT" onclick="getInfo()">
 
         </form>
         <p>By clicking submit you are aware of what's bout to happen el oh el</p>
