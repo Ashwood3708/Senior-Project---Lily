@@ -4,20 +4,29 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
 
 public class pdfParser {
-    private HashSet<String> gradeList;
+    private HashSet<String> electives;
+    private HashSet<String> gradesList;
+    private HashSet<String> reqClasses;
+    private HashSet<String> majorClasses;
     private Student person;
     private int numOfClasses;
 
     public pdfParser(){
-        gradeList = new HashSet();
-         person = new Student();
-         numOfClasses = 0;
-        fillHash();
+        electives = new HashSet();
+        gradesList = new HashSet();
+        reqClasses = new HashSet();
+        majorClasses = new HashSet();
+        person = new Student();
+        numOfClasses = 0;
+        fillElectives();
+        fillGradesList();
+        fillMajorClasses();
     }
 
     //parses PDF
@@ -66,13 +75,26 @@ public class pdfParser {
     }
 
     //parses textFile
+    /**
+     * gotta implement transfer segment
+     * */
     public void readTxt(String text) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(text));
         while(scan.hasNext()){
             String line = scan.nextLine().trim();
             //grabs major
-            if (line.contains("Major:")) {
-                person.setMajor(line.substring(6).trim());
+            if (line.contains("Major and Department:")) {
+                String[] set = line.split(" ");
+                String yet = "";
+                for (int i=3;i<set.length;i++){
+                yet+=set[i]+" ";
+                if(yet.contains(",")){
+                    yet= yet.substring(0,yet.length()-2);
+                    break;
+                }
+                }
+
+                person.setMajor(yet.trim());
             }
 
             //grabs gpa
@@ -89,7 +111,7 @@ public class pdfParser {
             //loop to grab all classses
             if (line.substring(line.length()-1).equals("R")) { //indicates when classes appear
                 //ends with: Term Totals (Undergraduate)
-                while (!line.contains("Term Totals (Undergraduate)")) {
+                while (!line.contains("Term Totals")) {
                     line = scan.nextLine().trim();
                     if(line.contains("Term Totals (Undergraduate)")){
                         break;
@@ -102,44 +124,9 @@ public class pdfParser {
 
                 }
                 person.setNumOfClasses(numOfClasses);
+                person.setMajorGPA(getMajorGPA());
             }
         }
-    }
-
-    public void fillHash() {
-        gradeList.add("A");
-        gradeList.add("A-");
-        gradeList.add("B+");
-        gradeList.add("B");
-        gradeList.add("B-");
-        gradeList.add("C+");
-        gradeList.add("C");
-        gradeList.add("C-");
-        gradeList.add("D+");
-        gradeList.add("D");
-        gradeList.add("D-");
-        gradeList.add("F+");
-        gradeList.add("F");
-        gradeList.add("F-");
-        gradeList.add("W");
-        //gradeList.add("I");
-//transfer credits
-        gradeList.add("TA");
-        gradeList.add("TA-");
-        gradeList.add("TB+");
-        gradeList.add("TB");
-        gradeList.add("TB-");
-        gradeList.add("TC+");
-        gradeList.add("TC");
-        gradeList.add("TC-");
-        gradeList.add("TD+");
-        gradeList.add("TD");
-        gradeList.add("TD-");
-        gradeList.add("TF+");
-        gradeList.add("TF");
-        gradeList.add("TF-");
-        gradeList.add("TW");
-        gradeList.add("TI");
     }
 
     @Override
@@ -147,9 +134,10 @@ public class pdfParser {
         String k = System.lineSeparator();
         String m = "major is: " + person.getMajor() +k;
         m+= "totalGPA is: " + person.getTotalGPA() +k;
+        m+= "majorGPA is: " + person.getMajorGPA() +k;
         m+= "totalClasses is: " + person.getNumOfClasses() +k;
+        if(!person.getMajorGPA().equals("Computer Science"))return m;
         m+= "class List:" +k;
-
         for(Class f: person.getList()){
             m+= f.toString() +k;
         }
@@ -157,6 +145,7 @@ public class pdfParser {
     }
 
     public void fillClass( String[] items, String creditHours, String QPoints){
+        try{
         int classNameStartPosition = 3;
         String concat = "";
         //Fill in class object
@@ -164,7 +153,7 @@ public class pdfParser {
         temp.subject = items[0].trim();
         temp.courseNum = items[1].trim();
         temp.level = items[2].trim();
-        while (!gradeList.contains(items[classNameStartPosition])) {
+        while (!gradesList.contains(items[classNameStartPosition])) {
             concat += items[classNameStartPosition].trim()+" ";
             classNameStartPosition++;
         }
@@ -172,7 +161,100 @@ public class pdfParser {
         temp.grade = items[classNameStartPosition++].trim();
         temp.creditHours= Double.parseDouble(creditHours);
         temp.finalCredit= Double.parseDouble(QPoints);
+        temp.isMajorClass = majorClasses.contains(items[0]+items[1]);
+        temp.isCompElective = electives.contains(items[0]+items[1]); 
+        temp.isRequired = reqClasses.contains(items[0]+items[1]);
         person.getList().add(temp);
+        }catch(Exception e){
+            System.out.println("incorrect File Format");
+            System.exit(-1);
+        }
+    }
+
+    public void fillGradesList() {
+        gradesList.add("A");
+        gradesList.add("A-");
+        gradesList.add("B+");
+        gradesList.add("B");
+        gradesList.add("B-");
+        gradesList.add("C+");
+        gradesList.add("C");
+        gradesList.add("C-");
+        gradesList.add("D+");
+        gradesList.add("D");
+        gradesList.add("D-");
+        gradesList.add("F+");
+        gradesList.add("F");
+        gradesList.add("F-");
+        gradesList.add("W");
+        //gradeList.add("I");
+//transfer credits
+        gradesList.add("TA");
+        gradesList.add("TA-");
+        gradesList.add("TB+");
+        gradesList.add("TB");
+        gradesList.add("TB-");
+        gradesList.add("TC+");
+        gradesList.add("TC");
+        gradesList.add("TC-");
+        gradesList.add("TD+");
+        gradesList.add("TD");
+        gradesList.add("TD-");
+        gradesList.add("TF+");
+        gradesList.add("TF");
+        gradesList.add("TF-");
+        gradesList.add("TW");
+        gradesList.add("TI");
+    }
+
+    public void fillElectives(){
+        electives.add("COMP320");
+        electives.add("COMP321");
+        electives.add("COMP323");
+        electives.add("COMP340");
+        electives.add("COMP356");
+        electives.add("COMP363");
+        electives.add("COMP368");
+        electives.add("COMP420");
+        electives.add("COMP421");
+        electives.add("COMP440");
+        electives.add("");
+        
+    }
+
+    public void fillMajorClasses() {
+        majorClasses.add("GEEN111");
+        majorClasses.add("COMP121");
+        majorClasses.add("COMP163");
+        majorClasses.add("COMP167");
+        majorClasses.add("GEEN165");
+        majorClasses.add("COMP267");
+        majorClasses.add("COMP200");
+        majorClasses.add("COMP280");
+        majorClasses.add("COMP285");
+        majorClasses.add("COMP300");
+        majorClasses.add("COMP322");
+        majorClasses.add("COMP350");
+        majorClasses.add("COMP360");
+        majorClasses.add("COMP365");
+        majorClasses.add("COMP375");
+        majorClasses.add("COMP385");
+        majorClasses.add("COMP390");
+        majorClasses.add("COMP410");
+        majorClasses.add("COMP476");
+        majorClasses.add("COMP496");
+    }
+
+    public double getMajorGPA(){
+        ArrayList <Class> list = person.getList();
+        double Qpoints=0.0, creditHours =0.0;
+        for (Class c:list) {
+            if(c.isMajorClass){
+                Qpoints+= c.finalCredit;
+                creditHours+=c.creditHours;
+            }
+        }
+        return (Qpoints/creditHours);
     }
 
 }
