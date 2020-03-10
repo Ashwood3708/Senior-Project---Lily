@@ -95,7 +95,8 @@
       <workItem from="1582058928300" duration="2204000" />
       <workItem from="1582574686632" duration="4701000" />
       <workItem from="1582667942085" duration="3657000" />
-      <workItem from="1582747434726" duration="9031000" />
+      <workItem from="1582747434726" duration="9996000" />
+      <workItem from="1583780659487" duration="10451000" />
     </task>
     <servers />
   </component>
@@ -114,5 +115,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="items" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
