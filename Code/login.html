@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="files/Logo.PNG" type="image/x-icon" />
+    <title>Lily | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar(){
+            window.scrollTo(0,1); }
+    </script>
+    <link href="css/login.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="JavaScript/read.js"  media="all"></script>
+
+</head>
+
+<body>
+<div class="login-layout wrapper">
+    <img src="files/Logo.PNG" alt="Lily Logo" class="center"/>
+    <div class="login-aggie">
+        <div class="login-content">
+             <!--Change action to go through selenium once it is implemented -->
+            <form name="form" method="post">
+                <input class="text banner" id="bannerID" type="text" name="banner" placeholder="Banner ID">
+
+                <input class="text" id="userPIN" type="password" name="pin" placeholder="PIN">
+
+                <input type="button" value="SUBMIT" onclick="getInfo()">
+
+        </form>
+            <p id="error"></p>
+        <p>By clicking submit you are aware of what's bout to happen el oh el</p>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
+
