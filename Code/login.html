@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<%@ page import="java.io.*,java.lang.*,java.util.*,java.net.*,java.util.*,java.text.*"%>
+<%@ page import="javax.activation.*,javax.mail.*,org.apache.commons.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+
+<html>
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="files/Logo.PNG" type="image/x-icon" />
@@ -14,7 +18,14 @@
     </script>
     <link href="css/login.css" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="JavaScript/read.js"  media="all"></script>
-
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bannerID, #userPIN').click(function() {
+                $("#errMsg").hide();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -23,15 +34,17 @@
     <div class="login-aggie">
         <div class="login-content">
              <!--Change action to go through selenium once it is implemented -->
-            <form name="form" action="loginServlet" method="post">
+            <form name="form" action="Java/loginServlet" method="post">
                 <input class="text banner" id="bannerID" type="text" name="banner" placeholder="Banner ID">
 
                 <input class="text" id="userPIN" type="password" name="pin" placeholder="PIN">
 
-                <input type="submit" value="SUBMIT">
+                <input type="submit" value="Login" id="btn">
 
         </form>
-        <p>By clicking submit you are aware of what's bout to happen el oh el</p>
+            <p id="check"></p>
+
+            <p>By clicking submit you are aware of what's bout to happen el oh el</p>
         </div>
     </div>
 </div>
