@@ -19,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -28,6 +29,7 @@
   <component name="ProjectId" id="1Xg2ADuqDTfAWZ9M5tJevpzlgam" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -38,7 +40,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -96,6 +98,12 @@
       <workItem from="1582574686632" duration="4701000" />
       <workItem from="1582667942085" duration="3657000" />
       <workItem from="1582747434726" duration="9996000" />
+      <workItem from="1583780659487" duration="11053000" />
+      <workItem from="1583958245711" duration="5741000" />
+      <workItem from="1584042024918" duration="5436000" />
+      <workItem from="1584146746728" duration="415000" />
+      <workItem from="1584475451401" duration="4399000" />
+      <workItem from="1584852281188" duration="15572000" />
     </task>
     <servers />
   </component>
@@ -114,5 +122,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="items" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

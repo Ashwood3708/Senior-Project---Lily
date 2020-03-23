@@ -81,23 +81,29 @@ public class pdfParser {
     public void readTxt(String text) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(text));
         String line;
-        while(scan.hasNext()){
+        while(scan.hasNext()) {
             line = scan.nextLine().trim();
 
+            if (line.contains("TRANSFER CREDIT ") || line.contains("Major and Department:") || line.equals("Overall:") || line.substring(line.length() - 1).equals("R") && line.contains("Subject")) {
+
+
             //grabs transfer credits
-            if(line.contains("TRANSFER CREDIT ACCEPTED BY INSTITUTION")){
-                while (!line.contains("Subject")){
+            if (line.contains("TRANSFER CREDIT ACCEPTED BY IN")) {
+                while (!line.contains("Subject")) {
                     line = scan.nextLine();
                 }
+                line = scan.nextLine().trim();
                 while (!line.contains("Attempt Hours")) {
-                    line = scan.nextLine().trim();
                     String creditHours = scan.nextLine().trim();
                     String QPoints = scan.nextLine().trim();
                     String items[] = line.split(" ");
-                    fillClass(items, creditHours,QPoints);
+                    fillClassT(items, creditHours, QPoints);
                     numOfClasses++;
-                    line= scan.nextLine();
+                    line = scan.nextLine().trim();
 
+                }
+                while (!line.contains("INSTITUTION CREDIT")) {
+                    line = scan.nextLine();
                 }
                 person.setNumOfClasses(numOfClasses);
                 person.setMajorGPA(getMajorGPA());
@@ -107,12 +113,12 @@ public class pdfParser {
             if (line.contains("Major and Department:")) {
                 String[] set = line.split(" ");
                 String yet = "";
-                for (int i=3;i<set.length;i++){
-                yet+=set[i]+" ";
-                if(yet.contains(",")){
-                    yet= yet.substring(0,yet.length()-2);
-                    break;
-                }
+                for (int i = 3; i < set.length; i++) {
+                    yet += set[i] + " ";
+                    if (yet.contains(",")) {
+                        yet = yet.substring(0, yet.length() - 2);
+                        break;
+                    }
                 }
 
                 person.setMajor(yet.trim());
@@ -130,23 +136,27 @@ public class pdfParser {
             }
 
             //loop to grab all classses
-            if (line.substring(line.length()-1).equals("R") && line.contains("Subject")) { //indicates when classes appear
+            if (line.substring(line.length() - 1).equals("R") && line.contains("Subject")) { //indicates when classes appear
                 //ends with: Term Totals (Undergraduate)
                 while (!line.contains("Term Totals")) {
                     line = scan.nextLine().trim();
-                    if(line.contains("Term Totals (Undergraduate)")){
+                    if (line.contains("Term Totals (Undergraduate)")) {
                         break;
                     }
+                    if (line.length() > 3) {
+
                     String creditHours = scan.nextLine().trim();
                     String QPoints = scan.nextLine().trim();
                     String items[] = line.split(" ");
-                    fillClassT(items, creditHours,QPoints);
+                    fillClass(items, creditHours, QPoints);
                     numOfClasses++;
-
+                }
                 }
                 person.setNumOfClasses(numOfClasses);
                 person.setMajorGPA(getMajorGPA());
             }
+
+        }
         }
     }
 
@@ -185,16 +195,17 @@ public class pdfParser {
         temp.isMajorClass = majorClasses.contains(items[0]+items[1]);
         temp.isCompElective = electives.contains(items[0]+items[1]); 
         temp.isRequired = reqClasses.contains(items[0]+items[1]);
+        temp.isTransferCredit = temp.grade.contains("T");
         person.getList().add(temp);
         }catch(Exception e){
-            System.out.println("incorrect File Format");
+            System.out.println("couldn't fill class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
             System.exit(-1);
         }
     }
 
     public void fillClassT( String[] items, String creditHours, String QPoints){
         try{
-            int classNameStartPosition = 3;
+            int classNameStartPosition = 2;
             String concat = "";
             //Fill in class object
             Class temp = new Class();
@@ -212,9 +223,10 @@ public class pdfParser {
             temp.isMajorClass = majorClasses.contains(items[0]+items[1]);
             temp.isCompElective = electives.contains(items[0]+items[1]);
             temp.isRequired = reqClasses.contains(items[0]+items[1]);
+            temp.isTransferCredit = temp.grade.contains("T");
             person.getList().add(temp);
         }catch(Exception e){
-            System.out.println("incorrect File Format");
+            System.out.println("couldn't fill transfer class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
             System.exit(-1);
         }
     }
