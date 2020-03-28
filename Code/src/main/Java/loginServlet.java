@@ -109,7 +109,7 @@ public class loginServlet extends HttpServlet{
                         "            <td colspan='2'><img src='files/pre-req.png' alt='Pre Req' class='center'/></object></td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
-                        "            <td colspan='2'><a href='curriculum.html' target='_blank'>Click Here To View Curriculum Guide</a></td>\n" +
+                        "            <td colspan='2'><a href='curriculum.html' target='_blank'>Click Here To View Interactive Curriculum Guide</a></td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
                         "            <td colspan='2'><a href='https://www.ncat.edu/' target='_blank'>Browse Here For More Info</a></td>\n" +
@@ -131,13 +131,13 @@ public class loginServlet extends HttpServlet{
             }else{
                 // if user logs in correctly, but there was an issue parsing the file then they may not be comp sci
                 // students this updated index.jsp stating that error
-                writer.write("<p id='errMsg' style='color: red; font-size: larger;'>User Must Not Be Computer Science!</p>");
+                writer.write("<p id='errMsg' style='color: red; font-size: 40px; text-align:center'>User Must Not Be Computer Science!</p>");
                 rdObj = request.getRequestDispatcher("/index.jsp");
                 rdObj.include(request, response);
             }
         }else{
             // if user logs in incorrectly then it will say user does not exist
-            writer.write("<p id='errMsg' style='color: red; font-size: larger;'>User Does Not Exist!</p>");
+            writer.write("<p id='errMsg' style='color: red; font-size: 40px; text-align:center'>User Does Not Exist!</p>");
             rdObj = request.getRequestDispatcher("/index.jsp");
             rdObj.include(request, response);
         }

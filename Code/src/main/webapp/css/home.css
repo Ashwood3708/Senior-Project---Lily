@@ -31,7 +31,7 @@ body{
 }
 
 .table-info{
-    font-size: 0.9em;
+    font-size: 1.5em;
     color: #ffffff;
     width: 35%;
     margin: 3em auto;
@@ -55,13 +55,13 @@ input[type="submit"]{
     font-family: 'Roboto', SansSerif, sans-serif;
 }
 a:link{
-    font-size: 0.9em;
+    font-size: 1.2em;
     color: #ffffff;
     font-family: 'Roboto', SansSerif, sans-serif;
 }
 
 a:visited{
-    font-size: 0.9em;
+    font-size: 1.2em;
     color: #FDB827;
     font-family: 'Roboto', SansSerif, sans-serif;
 }
