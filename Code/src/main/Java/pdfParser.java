@@ -163,6 +163,10 @@ public class pdfParser {
             m+= f.toString() +k;
         }
         return m;
+
+    }
+    public String get(){
+        return person.getTotalGPA() + " " + person.getMajorGPA();
     }
 
     public void fillClass( String[] items, String creditHours, String QPoints){

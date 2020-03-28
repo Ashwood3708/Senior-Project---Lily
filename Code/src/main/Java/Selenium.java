@@ -2,11 +2,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Selenium {
     private WebDriver driver;
@@ -15,24 +17,33 @@ public class Selenium {
 
 
     //still need error case
-    public Boolean Selenium() {
+    public ArrayList<String> checkText() {
+        ArrayList<String> display = new ArrayList<>();
         pdfParser g = new pdfParser();
         try {
             g.readTxt("transcript.txt");
             System.out.print(g.toString());
-            return true;
+            String[] s = g.get().split(" ");
+            display.add(s[0]);
+            display.add(s[1]);
+
+            return display;
         }catch (FileNotFoundException e){
             System.out.println("file not found");
             System.exit(-1);
-            return false;
+            return null;
         }
 
     }
 
-    public Boolean run(String x, String y)  {
+    public Boolean run(String x, String y) throws NoSuchMethodError {
         try {
             //access site through chrome.exe
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+            //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "/Users/robbie/Downloads/chromedriver");
+            //ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--headless");
+
             driver = new ChromeDriver();
             driver.navigate().to("https://ssbprod-ncat.uncecs.edu/pls/NCATPROD/twbkwbis.P_WWWLogin");
 

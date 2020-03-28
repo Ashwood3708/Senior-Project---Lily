@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="files/Logo.PNG" type="image/x-icon" />
+    <link rel="shortcut icon" href="WEB-INF/files/Logo.PNG" type="image/x-icon" />
     <title>Lily | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -13,7 +13,6 @@
             window.scrollTo(0,1); }
     </script>
     <link href="css/home.css" rel="stylesheet" type="text/css" media="all">
-    <script type="text/javascript" src="JavaScript/read.js"  media="all"></script>
 
 </head>
 <body onload="displayInfo()">
@@ -48,11 +47,14 @@
         <tr>
             <td></td>
         </tr>
-       <!-- <tr class="header">
-            <td colspan="2"><b>Pre-Requisitions</b></td>
-        </tr> -->
+        <!-- <tr class="header">
+             <td colspan="2"><b>Pre-Requisitions</b></td>
+         </tr> -->
         <tr class="header">
-            <td colspan="2"><object width="500" height="300" name="prereqs" type="text/html" data="pre-req.html"></object></td>
+            <td colspan="2"><img src="files/pre-req.png" alt="Pre Req" class="center"/></td>
+        </tr>
+        <tr class="header">
+            <td colspan="2"><a href="curriculum.html" target="_blank">Click Here To View Curriculum Guide</a></td>
         </tr>
         <tr class="header">
             <td colspan="2"><a href="https://www.ncat.edu/" target="_blank">Browse Here For More Info</a></td>
@@ -60,12 +62,12 @@
         </tbody>
     </table>
 </div>
-    <div class="table-info">
-        <form name="form" action="login.html" method="post">
+<div class="table-info">
+    <form name="form" action="/index.jsp" method="post">
 
-            <input type="submit" value="SIGNOUT" onclick="">
+        <input type="submit" value="SIGNOUT">
 
-        </form>
-    </div>
+    </form>
+</div>
 </body>
 </html>
