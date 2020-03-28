@@ -16,6 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Selenium {
     private WebDriver driver;
@@ -61,8 +62,11 @@ public class Selenium {
             //access site through chrome.exe
             //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
             System.setProperty("webdriver.chrome.driver", "/Users/robbie/Downloads/chromedriver");
-            //ChromeOptions options = new ChromeOptions();
-            //options.addArguments("--headless");
+            ChromeOptions options = new ChromeOptions();
+            //List<String> chromeSwitches = new ArrayList<>();
+            //chromeSwitches.add("--headless");
+            //chromeSwitches.add("--disable-gpu");
+            //options.addArguments(chromeSwitches);
 
             driver = new ChromeDriver();
             driver.navigate().to("https://ssbprod-ncat.uncecs.edu/pls/NCATPROD/twbkwbis.P_WWWLogin");
