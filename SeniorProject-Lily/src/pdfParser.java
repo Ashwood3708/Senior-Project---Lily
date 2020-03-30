@@ -184,6 +184,7 @@ public class pdfParser {
         temp.subject = items[0].trim();
         temp.courseNum = items[1].trim();
         temp.level = items[2].trim();
+        temp.setName();
         while (!gradesList.contains(items[classNameStartPosition])) {
             concat += items[classNameStartPosition].trim()+" ";
             classNameStartPosition++;
@@ -212,6 +213,7 @@ public class pdfParser {
             temp.subject = items[0].trim();
             temp.courseNum = items[1].trim();
             temp.level = "T";
+            temp.setName();
             while (!gradesList.contains(items[classNameStartPosition])) {
                 concat += items[classNameStartPosition].trim()+" ";
                 classNameStartPosition++;
@@ -316,6 +318,10 @@ public class pdfParser {
             }
         }
         return (Qpoints/creditHours);
+    }
+
+    public Student getPerson(){
+        return person;
     }
 
 }

@@ -1,0 +1,43 @@
+comp 163, none
+comp 180, math 131
+comp 167, comp163
+comp 121, none
+comp 390, none
+comp 200, comp 163
+comp 300, comp 167, comp163
+comp 280, comp 167,comp 163,comp 180, math 131
+comp 285, comp 280, comp 167,comp 163,comp 180, math 131
+comp 360, comp 280, comp 167,comp 163,comp 180, math 131
+comp 385, comp 360, comp 280, comp 167,comp 163, comp 180, math 131
+comp 375, comp 280, comp 167,comp 163,comp 180, math 131
+comp 476, comp 280, comp 167,comp 163,comp 180, math 131
+comp 350, comp 375, comp 280, comp 167,comp 163,comp 180, math 131
+comp 267, comp 280, comp 167,comp 163,comp 180, math 131
+comp 365, comp 285,comp 280, comp 167,comp 163,comp 180, math 131
+comp 322, comp 280, comp 167,comp 163,comp 180, math 131
+comp 410, comp 285, comp 280, comp 167,comp 163,comp 180, math 131
+comp 496, comp 410, comp 285, comp 280, comp 167,comp 163,comp 180, math 131
+math 131, none
+math 132, math 131
+math 341, math 132, math 131
+math 340, math 132, math 131
+math 351, math 132, math 131
+geen 111, none
+spch 250, none
+engl 100, none
+engl 101, engl 100
+engl 331, engl 101, engl 100
+mgmt 110,none
+mgmt 132, none
+econ 200, none
+econ 201, none
+math 224, none
+isen 370, none
+ecen 356, none
+chem 106, math 131
+chem 107, chem 106, math 131
+phys 241, math 131
+phys 242, phys 241, math 131
+biol 100, none
+biol 101, none
+slmg 200, none

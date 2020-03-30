@@ -18,13 +18,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1Xg2ADuqDTfAWZ9M5tJevpzlgam" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -36,11 +37,11 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/selenium-java-3.141.59/geckodriver-v0.26.0-win64" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -104,7 +105,8 @@
       <workItem from="1584146746728" duration="415000" />
       <workItem from="1584475451401" duration="4399000" />
       <workItem from="1584852281188" duration="16045000" />
-      <workItem from="1584997647245" duration="412000" />
+      <workItem from="1584997647245" duration="4528000" />
+      <workItem from="1585273624954" duration="20013000" />
     </task>
     <servers />
   </component>

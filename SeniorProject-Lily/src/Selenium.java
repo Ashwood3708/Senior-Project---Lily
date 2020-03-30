@@ -11,17 +11,19 @@ import java.io.IOException;
 
 public class Selenium {
     private WebDriver driver;
-
-    private int finalTime = 0;
+    private CourseRecommendations courseRecommendations;
 
     public Selenium(String x, String y) {
         run(x, y);
         pdfParser g = new pdfParser();
         try {
             g.readTxt("transcript.txt");
-            System.out.print(g.toString());
+            //System.out.print(g.toString());
+            courseRecommendations = new CourseRecommendations(g.getPerson());
+            System.out.print(courseRecommendations.classesToTakeToString());
+
         } catch (FileNotFoundException e) {
-            System.out.println("file not found");
+            System.out.println(" transcript.txt not found");
             System.exit(-1);
         }
 
@@ -62,7 +64,7 @@ public class Selenium {
 
             //--click submit btn
             driver.findElement(By.cssSelector("input[type='submit'][value='Submit']")).click();
-            Thread.sleep(finalTime);  //should see transcript now
+            //Thread.sleep(0);  //should see transcript now
 
             //Scrape transcript text
             String str = driver.findElement(By.className("pagebodydiv")).getText();

@@ -1,5 +1,6 @@
 public class Class {
 
+    String name;
     String subject="";
     String courseNum ="";
     String level ="";
@@ -11,6 +12,10 @@ public class Class {
     boolean isCompElective = false;
     boolean isRequired = false;
     boolean isTransferCredit= false;
+
+    public void setName(){
+        name = subject + " " + courseNum;
+    }
 
 
     @Override

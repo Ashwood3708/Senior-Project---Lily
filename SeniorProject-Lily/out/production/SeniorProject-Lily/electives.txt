@@ -1,0 +1,12 @@
+1
+mgmt 110, mgmt 132, mktg 230, econ 200, econ 201
+1
+math 224, isen 370, ecen 356
+1
+math 340, math 351
+3
+chem 106, phys 241
+chem 107, phys 242
+biol 100, biol 101, slmg 200
+3
+mgmt 335, bued 342, ecen 427, isen 415, math 360, math 365, cst 340 or comp 300+
