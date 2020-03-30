@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class CourseRecommendations {
 
@@ -31,7 +28,13 @@ public class CourseRecommendations {
     }
 
     public void compElectives(){
-        ArrayList<String> electives = ["","",""] ;
+        ArrayList electives = new ArrayList(Arrays.asList(
+                "mgmt 335", "bued 342", "ecen 427", "isen 415", "math 360", "math 365", "cst 340",
+                "comp 385", "comp 397", "comp 420", "comp 440", "comp 494", "comp 495", "comp 620",
+                "comp 710", "comp 725", "comp 726", "comp 755", "comp 765", "comp 790"
+                ));
+
+
 
     }
 
