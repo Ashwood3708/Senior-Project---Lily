@@ -18,18 +18,15 @@ public class Selenium {
         pdfParser g = new pdfParser();
         try {
             g.readTxt("transcript.txt");
-            //System.out.print(g.toString());
             courseRecommendations = new CourseRecommendations(g.getPerson());
-            System.out.print(courseRecommendations.classesToTakeToString());
-
         } catch (FileNotFoundException e) {
             System.out.println(" transcript.txt not found");
-            System.exit(-1);
+            //System.exit(-1);
         }
 
     }
 
-    public void run(String x, String y) {
+    private void run(String x, String y) {
         try {
             //access site through chrome.exe
             System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -78,9 +75,13 @@ public class Selenium {
         }
     }
 
-    public static void writeToText(String buffer) throws IOException {
+    private static void writeToText(String buffer) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("transcript.txt"));
         writer.write(buffer);
         writer.close();
+    }
+
+    public CourseRecommendations getCourseRecommendations(){
+        return courseRecommendations;
     }
 }

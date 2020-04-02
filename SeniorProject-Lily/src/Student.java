@@ -24,6 +24,7 @@ public class Student {
         for (Class one:list) {
             names.add(one.name);
         }
+        names.add("NONE");
     }
 
     public  HashSet<String> getNames(){

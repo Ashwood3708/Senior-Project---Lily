@@ -4,10 +4,19 @@
     <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/electives.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/electives.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Selenium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Selenium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/requiredClassList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/requiredClassList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/transcript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/transcript.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requiredClassList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requiredClassList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CourseRecommendations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CourseRecommendations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Selenium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Selenium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transcript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/transcript.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +57,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -114,7 +123,9 @@
       <workItem from="1584852281188" duration="16045000" />
       <workItem from="1584997647245" duration="4528000" />
       <workItem from="1585273624954" duration="29679000" />
-      <workItem from="1585609839826" duration="1444000" />
+      <workItem from="1585609839826" duration="2218000" />
+      <workItem from="1585670384395" duration="15468000" />
+      <workItem from="1585851420623" duration="214000" />
     </task>
     <servers />
   </component>
@@ -135,15 +146,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CourseRecommendations.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="items" />
