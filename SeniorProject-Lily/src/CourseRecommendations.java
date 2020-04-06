@@ -193,7 +193,9 @@ public class CourseRecommendations {
 
     //not filled in
     public String socialSciElectives() {
-        ArrayList<String> electives = new ArrayList(Arrays.asList(""));
+        ArrayList<String> electives = new ArrayList(Arrays.asList("bued 279","econ 200", "econ 201","fcs 135","fcs 181",
+                "fcs 260","hist 103","hist 104","hist 105","hist 106","hist 107","hist 130","hist 206","hist 207","hist 216",
+                "hist 231","jomc 240","poli 110","psyc 101","soci 100","soci 200","ssfm 226"));
         socialElectives.addAll(electives);
         int eCount = 1;
         for (String name : electives) {
@@ -211,7 +213,7 @@ public class CourseRecommendations {
     }
 
     public String histElectives() {
-        ArrayList<String> electives = new ArrayList(Arrays.asList(""));
+        ArrayList<String> electives = new ArrayList(Arrays.asList("engl 333","engl 334","hist 103","hist 106", "hist 107","libs 202", "musi 220"));
         histElectives.addAll(electives);
         int eCount = 1;
         for (String name : electives) {
@@ -229,7 +231,7 @@ public class CourseRecommendations {
     }
 
     public String globalElectives() {
-        ArrayList<String> electives = new ArrayList(Arrays.asList(""));
+        ArrayList<String> electives = new ArrayList(Arrays.asList("hist 130","hist 206", "hist 207", "hist 216","hist hist 231","mgmt 221","phil 103","phil 201" ));
         globalElectives.addAll(electives);
         int eCount = 1;
         for (String name : electives) {
@@ -326,7 +328,6 @@ public class CourseRecommendations {
 
     }
 
-    //prints
     public String toString() {
         String k = System.lineSeparator();
         String key = "Required classes to take: " + classestoTake.size() + k;
