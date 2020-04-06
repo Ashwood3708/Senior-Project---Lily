@@ -1,9 +1,6 @@
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.text.PDFTextStripper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -28,56 +25,7 @@ public class pdfParser {
         fillGradesList();
         fillMajorClasses();
     }
-
-    //parses PDF
-    public void readPdf() throws IOException {
-
-        try (PDDocument document = PDDocument.load(new File("AcademicTranscript.pdf"))) {
-            document.getClass();
-
-            if (!document.isEncrypted()) {
-                PDFTextStripper tStripper = new PDFTextStripper();
-                String pdfFileInText = tStripper.getText(document);
-                String lines[] = pdfFileInText.split("\\s\\n");
-
-                for (int i = 0; i < lines.length; i++) {
-
-                    if (lines[i].contains("Major:")) { //grabs major
-                        person.setMajor(lines[i].substring(6).trim());
-                    }
-                    if (lines[i].equals("Overall:")) {//grabs gpa
-                        int end = lines[i + 1].length();
-                        person.setTotalGPA(lines[i + 1].substring(end - 4, end).trim());
-                    }
-                    if (lines[i].equals("R")) {  //indicates when classes appear
-                        //loop to grab all classses
-                        //ends with: Term Totals (Undergraduate)
-                        while (!lines[i].contains("Term Totals (Undergraduate)")) {
-                            if (lines[i].length() > 2 && lines[i + 1].length() > 2) {
-                                String items[] = lines[i].split(" ");
-                                String items2[] = lines[i + 1].split(" ");
-                                fillClass(items,items2[0].trim(),items2[1].trim());
-                                numOfClasses++;
-                            }
-                            i++;
-                        }
-                    }
-                }
-            }
-
-        }catch (Exception ex){
-            System.out.println("couldnt find the PDF-File of incorrect format of File");
-            System.exit(-1);
-
-        }
-        person.setNumOfClasses(numOfClasses);
-
-    }
-
-    //parses textFile
-    /**
-     * gotta implement transfer segment
-     * */
+    
     public void readTxt(String text) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(text));
         String line;

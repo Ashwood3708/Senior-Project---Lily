@@ -15,7 +15,7 @@ public class Selenium {
 
     public Selenium(String x, String y) {
         run(x, y);
-        pdfParser g = new pdfParser();
+         pdfParser g = new pdfParser();
         try {
             g.readTxt("transcript.txt");
             courseRecommendations = new CourseRecommendations(g.getPerson());
@@ -28,8 +28,8 @@ public class Selenium {
 
     private void run(String x, String y) {
         try {
-            //access site through chrome.exe
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+            //access site through chrome.exe in libs folder
+            System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
 
