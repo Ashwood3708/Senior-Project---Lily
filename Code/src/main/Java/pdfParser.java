@@ -316,4 +316,8 @@ public class pdfParser {
         return (Qpoints/creditHours);
     }
 
+    public Student getPerson(){
+        return person;
+    }
+
 }

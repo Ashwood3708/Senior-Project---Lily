@@ -20,7 +20,7 @@ import java.util.List;
 
 public class Selenium {
     private WebDriver driver;
-
+    private CourseRecommendations courseRecommendations;
     private int finalTime = 0;
 
 
@@ -38,8 +38,11 @@ public class Selenium {
             System.out.print(g.toString());
             // splits string by white space (subject to change when list gets added)
             String[] s = g.getUserInfo().split(" ");
+            courseRecommendations = new CourseRecommendations(g.getPerson());
+            System.out.println("PERSON:" + courseRecommendations);
             display.add(s[0]);
             display.add(s[1]);
+            display.add(courseRecommendations.takeThese());
 
             return display;
         }catch (FileNotFoundException e){
@@ -62,12 +65,13 @@ public class Selenium {
             //access site through chrome.exe
             //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
             System.setProperty("webdriver.chrome.driver", "/Users/robbie/Downloads/chromedriver");
-            ChromeOptions options = new ChromeOptions();
-            //List<String> chromeSwitches = new ArrayList<>();
-            //chromeSwitches.add("--headless");
-            //chromeSwitches.add("--disable-gpu");
-            //options.addArguments(chromeSwitches);
+            /*ChromeOptions options = new ChromeOptions();
+            List<String> chromeSwitches = new ArrayList<>();
+            chromeSwitches.add("--headless");
+            chromeSwitches.add("--disable-gpu");
+            options.addArguments(chromeSwitches);*/
 
+            //add options
             driver = new ChromeDriver();
             driver.navigate().to("https://ssbprod-ncat.uncecs.edu/pls/NCATPROD/twbkwbis.P_WWWLogin");
 
@@ -115,5 +119,8 @@ public class Selenium {
         BufferedWriter writer = new BufferedWriter(new FileWriter("transcript.txt"));
         writer.write(buffer);
         writer.close();
+    }
+    public CourseRecommendations getCourseRecommendations(){
+        return courseRecommendations;
     }
 }

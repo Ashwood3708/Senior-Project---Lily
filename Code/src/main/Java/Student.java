@@ -1,5 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Student {
 
@@ -8,6 +9,7 @@ public class Student {
     private String totalGPA;
     private int numOfClasses;
     private ArrayList<Class> list;
+    private HashSet<String> names;
 
     public Student(){
         major = "undeclared";
@@ -15,6 +17,18 @@ public class Student {
         totalGPA = "";
         numOfClasses = 0;
         list = new ArrayList();
+        names = new HashSet<>();
+    }
+
+    public void addNames(){
+        for (Class one:list) {
+            names.add(one.name);
+        }
+        names.add("NONE");
+    }
+
+    public  HashSet<String> getNames(){
+        return names;
     }
 
     public String getMajor() {

@@ -100,7 +100,7 @@ public class loginServlet extends HttpServlet{
                         "            <td colspan='2'><b>Recommendations</b></td>\n" +
                         "        </tr>\n" +
                         "        <tr>\n" +
-                        "            <td>" + "List of items" + "</td>\n" + // Gets the Class Recommendations to display in table
+                        "            <td>" + usersHomePageData.get(2) + "</td>\n" + // Gets the Class Recommendations to display in table
                         "        </tr>\n" +
                         "       <!-- <tr class='header'>\n" +
                         "            <td colspan='2'><b>Pre-Requisitions</b></td>\n" +
