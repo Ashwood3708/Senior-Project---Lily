@@ -35,11 +35,11 @@ public class Selenium {
         pdfParser g = new pdfParser();
         try {
             g.readTxt("transcript.txt");
-            System.out.print(g.toString());
             // splits string by white space (subject to change when list gets added)
             String[] s = g.getUserInfo().split(" ");
             courseRecommendations = new CourseRecommendations(g.getPerson());
-            System.out.println("PERSON:" + courseRecommendations);
+            System.out.print(courseRecommendations.toString());
+            //System.out.println("PERSON:" + courseRecommendations);
             display.add(s[0]);
             display.add(s[1]);
             display.add(courseRecommendations.takeThese());
