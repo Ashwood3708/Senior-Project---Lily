@@ -9,7 +9,7 @@
         }
         table{
             color:blue;
-            border: 1px;
+            border:1;
             border-color: darkblue;
             text-align: left;
             resize: both;
@@ -22,8 +22,17 @@
             color: red;
             text-align: center;
         }
+	
         h4{
-            font-size: 20px;
+            font-size: 200;
+            color: red;
+            text-align: center;
+        }
+		#general{
+			position:relative;
+		}
+		
+		h2{
             color: blue;
             text-align: center;
         }
@@ -35,6 +44,29 @@
             margin-right:inherit;
             
         }
+		#legendTable{
+			padding-bottom: 40px;
+			border: 1px;
+		}
+		#sample1{
+			border: 3px solid black;
+			color: black;
+		}
+		#sample2{
+			background-color: blue;
+			color: white;
+		}
+		/*#table_stat{
+			display: none;
+		}*/
+		#div_stat{
+			text-align:left;
+			top:40%;
+		}
+		#p_stat{
+			display:none;
+		}
+		
     </style>
     <head>
         <title>Curriculum-Fall 2016 (Calculus)</title>
@@ -43,13 +75,23 @@
         
         <h1 align="center">Computer Science BS Curriculum Guide for Fall 2016 (For Students Starting with Calculus I)</h1>
         <fieldset>
-            <legend>Viewing Directions:</legend>
-            <h6 id="disclaimer" align="center"><u>Disclaimer:</u> This is an ducation tool to aid the user to aline a prerequisites to core classes.  This tools a a supplemental assesment aid to plan for the future and assess where you are currently.  Refer to your advisor for verification of the information provided.  The creators of this tool are not held responsible for any incorrect, misunderstood, or out of date information.  Use this aid at your own risk.</h6>
+            <h4 id="disclaimer" align="center"><u>Disclaimer:</u> This is an education tool to aid the user to aline a prerequisites to core classes.  This tools is a supplemental assesment aid to plan for the future and assess where you are currently.  Refer to your advisor to verify the correctness of the provided information.  The creators of this tool are not held responsible for any incorrect, misunderstood, or out of date information.  Use this aid at your own risk.</h4>
         </fieldset>
-        <h4>
-             Viewing Instructions: Hover over a course to view prerequisite/s for the course.
-        </h4>
+        <h2>
+			Viewing Instructions: Hover over a course to view prerequisite/s for the course (selected course/s).  Refer to the example displayed below.
+		</h2>
+		<table  id="legendTable" align="center">
+			<tr>
+				<td id="sample1">Sample Course</td>
+				<td>  Selected courses will have a black border around them when hovered over.</td>
+			</tr>
+			<tr>
+				<td id="sample2" >Sample Course</td>
+				<td>  Pre-requisites of selected courses will appear in a highlighted blue cells.</td>
+			</tr>
+		</table>
         
+        <div align="center">
         <table border="1" align="center">
             
             <col width="400">
@@ -68,37 +110,37 @@
                 <td></td>
             </tr>
             <tr>
-                <td id="end100">ENGL100 Ideas & Their Expressions</td>
+                <td id="eng100" onmouseover="eng100_over()" onmouseout="eng100_out()">ENGL100 Ideas & Their Expressions</td>
                 <td align="right">3</td>
-                <td id="eng101">ENG101 Ideas & Their Expression II</td>
-                <td align="right">3</td>
-            </tr>
-            <tr>
-                <td id="socialScience">Social/Behavior Sciences Elective</td>
-                <td align="right">3</td>
-                <td id="knowlege">Knowledge of African-American Culture and History</td>
+                <td id="eng101" onmouseover="eng101_over()" onmouseout="eng101_out()">ENG101 Ideas & Their Expression II</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="comp163">COMP163 Introduction to Computer Programming<br><b><i>(Formerly GEEN163)</i></b></td>
+                <td id="socialScience" onmouseover="ss_over()" onmouseout="ss_out()">Social/Behavior Sciences Elective</td>
                 <td align="right">3</td>
-                <td id="comp167" onmouseover="func167_over()" onmouseout="func167_out()">COMP167 Computer Programming Design<br><b><i>(Formerly GEEN 165)</i></b></td>
+                <td id="knowledge" onmouseover="know_over()" onmouseout="know_out()">Knowledge of African-American Culture and History</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="geen111">GEEN111 COE Colloquium</td>
+                <td id="comp163" onmouseover="comp163_over()" onmouseout="comp163_out()">COMP163 Introduction to Computer Programming<br><b><i>(Formerly GEEN163)</i></b></td>
+                <td align="right">3</td>
+                <td id="comp167" onmouseover="funccomp167_over()" onmouseout="funccomp167_out()">COMP167 Computer Programming Design<br><b><i>(Formerly GEEN 165)</i></b></td>
+                <td align="right">3</td>
+            </tr>
+            <tr>
+                <td id="geen111" onmouseover="geen111_over()" onmouseout="geen111_out()">GEEN111 COE Colloquium</td>
                 <td align="right">1</td>
-                <td id="comp180" onmouseover="func180_over()" onmouseout="func180_out()">COMP 180 Discrete Structures</td>
+                <td id="comp180" onmouseover="funccomp180_over()" onmouseout="funccomp180_out()">COMP 180 Discrete Structures</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="math131">MATH131 Calculus I</td>
+                <td id="math131" onmouseover="math131_over()" onmouseout="math131_out()">MATH131 Calculus I</td>
                 <td align="right">4</td>
                 <td id="math132" onmouseover="funcmath132_over()" onmouseout="funcmath132_out()">MATH 132 Calculus II</td>
                 <td align="right">4</td>
             </tr>
             <tr>
-                <td id="comp121">COMP121 CS Freshman Colloquium</td>
+                <td id="comp121" onmouseover="comp121_over()" onmouseout="comp121_out()">COMP121 CS Freshman Colloquium</td>
                 <td align="right">1</td>
                 <td></td>
                 <td align="right"></td>
@@ -119,19 +161,19 @@
                 <td></td>
             </tr>
             <tr>
-                <td id="spch250">SPCH 250 Speech Fundamentals (Humanities/Fine Arts)</td>
+                <td id="spch250" onmouseover="spch250_over()" onmouseout="spch250_out()">SPCH 250 Speech Fundamentals (Humanities/Fine Arts)</td>
                 <td align="right">3</td>
-                <td>Global Awareness</td>
+                <td id ="global" onmouseover="global_over()" onmouseout="global_out()">Global Awareness</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="science1">Approved Science Elective [3]</td>
+                <td id="science1" onmouseover="sci1_over()" onmouseout="sci1_out()">Approved Science Elective [3]</td>
                 <td align="right">4</td>
-                <td id="science2">Approved Science Elective [3]</td>
+                <td id="science2" onmouseover="sci2_over()" onmouseout="sci2_out()">Approved Science Elective [3]</td>
                 <td align="right">4</td>
             </tr>
             <tr>
-                <td id="business">Business Elective [5]</td>
+                <td id="business" onmouseover="busi_over()" onmouseout="busi_out()">Business Elective [5]</td>
                 <td align="right">3</td>
                 <td id="comp285" onmouseover="funccomp285_over()" onmouseout="funccomp285_out()">COMP285 Analysis of Algorithms</td>
                 <td align="right">3</td>
@@ -139,7 +181,7 @@
             <tr>
                 <td id="math341" onmouseover="funcmath341_over()" onmouseout="funcmath341_out()">MATH341 Diff. Equations</td>
                 <td align="right">3</td>
-                <td id="math_elective">Approved Mathematics Elective [2]</td>
+                <td id="math_elective" onmouseover="mathele_over()" onmouseout="mathele_out()">Approved Mathematics Elective [2]</td>
                 <td align="right">3</td>
             </tr>
             <tr>
@@ -151,7 +193,7 @@
              <tr>
                 <td></td>
                 <td></td>
-                <td id="comp200">COMP200 Sophomore Colloquium</td>
+                <td id="comp200" onmouseover="comp200_over()" onmouseout="comp200_out()">COMP200 Sophomore Colloquium</td>
                 <td align="right">1</td>
             </tr>
             <tr>
@@ -170,13 +212,13 @@
                 <td></td>
             </tr>
             <tr>
-                <td>Approved Science Elective [3]</td>
+                <td id="science3" onmouseover="sci3_over()" onmouseout="sci3_out()">Approved Science Elective [3]</td>
                 <td align="right">4</td>
-                <td id="engl331">ENGL331 Writing Science & Tech.</td>
+                <td id="engl331" onmouseover="engl311_over()" onmouseout="engl331_out()">ENGL331 Writing Science & Tech.</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td>Approved Statistics Elective [3]</td>
+                <td id="statele" onmouseover="stat_over()" onmouseout="stat_out()" onmousedown="stat_down()">Approved Statistics Elective [3]</td>
                 <td align="right">3</td>
                 <td id="comp322" onmouseover="funccomp322_over()" onmouseout="funccomp322_out()">COMP322 Internet Systems</td>
                 <td align="right">3</td>
@@ -194,15 +236,15 @@
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td>Approved COMP Elective</td>
+                <td id="compele" onmouseover="compele_over()" onmouseout="compele_out()">Approved COMP Elective</td>
                 <td align="right">3</td>
-                <td id="comp390">COMP390 Soc. Implications of Computing (Ethics)</td>
+                <td id="comp390" onmouseover="comp390_over()" onmouseout="comp390_out()">COMP390 Soc. Implications of Computing (Ethics)</td>
                 <td align="right">3</td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
-                <td id="comp300">COMP300 Junior Colloquium</td>
+                <td id="comp300" onmouseover="comp300_over()" onmouseout="comp300_out()">COMP300 Junior Colloquium</td>
                 <td align="right">1</td>
             </tr>
             <tr>
@@ -229,19 +271,19 @@
             <tr>
                 <td id="comp410" onmouseover="funccomp410_over()" onmouseout="funccomp410_out()">COMP410 Software Engineering</td>
                 <td align="right">3</td>
-                <td>Approved COMP Elective [4]</td>
+                <td id="compele2" onmouseover="compele2_over()" onmouseout="compele2_out()">Approved COMP Elective [4]</td>
                 <td align="right">3</td>
             </tr>
             <tr>
                 <td id="comp476" onmouseover="funccomp476_over()" onmouseout="funccomp476_out()">COMP476 Network Computer Systems</td>
                 <td align="right">3</td>
-                <td>Approved COMP Elective [4]</td>
+                <td id="compele3" onmouseover="compele3_over()" onmouseout="compele3_out()">Approved COMP Elective [4]</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td>Free Elective</td>
+                <td id="free1" onmouseover="free1_over()" onmouseout="free1_out()">Free Elective</td>
                 <td align="right">3</td>
-                <td>Free Elective</td>
+                <td id="free2" onmouseover="free2_over()" onmouseout="free2_out()">Free Elective</td>
                 <td align="right">3</td>
             </tr>
             <tr>
@@ -257,142 +299,360 @@
                 <td align="right"></td>
             </tr>
         </table>
-        <script>            
-            function func167_over(){
+		</div>
+		
+		<!-- Elective Tables-->
+		<div id="div_stat">
+		<!--<table id="table_stat">
+			
+			<tr>
+				<td>MATH224</td>
+				<td>Probability and Statisctics</td>
+			</tr>
+			<tr>
+				<td>ISEN370</td>
+				<td>Eng. Statistics</td>
+			</tr>
+			<tr>
+				<td>ECEN356</td>
+				<td>Stochastic Process and Random Variables</td>
+			</tr>
+			
+		</table>-->
+			<p id="p_stat">
+				<b>Statistics Electives:</b>
+				MATH224 Probability and Statisctics<br>
+				ISEN370 Eng. Statistics<br>
+				ECEN356 Stochastic Process and Random Variables
+			</p>
+		</div>
+		
+		
+        <script>
+			
+			function eng100_over(){
+                document.getElementById("eng100").style.border="3px solid black";
+            }
+			function eng100_out(){
+                document.getElementById("eng100").style.border="";
+            }
+			function eng101_over(){
+                document.getElementById("eng101").style.border="3px solid black";
+            }
+			function eng101_out(){
+                document.getElementById("eng101").style.border="";
+            }
+			function ss_over(){
+                document.getElementById("socialScience").style.border="3px solid black";
+            }
+			function ss_out(){
+                document.getElementById("socialScience").style.border="";
+            }
+			function know_over(){
+                document.getElementById("knowledge").style.border="3px solid black";
+            }
+			function know_out(){
+                document.getElementById("knowledge").style.border="";
+            }
+			function comp163_over(){
+                document.getElementById("comp163").style.border="3px solid black";
+            }
+			function comp163_out(){
+                document.getElementById("comp163").style.border="";
+            }
+			function geen111_over(){
+                document.getElementById("geen111").style.border="3px solid black";
+            }
+			function geen111_out(){
+                document.getElementById("geen111").style.border="";
+            }
+			function math131_over(){
+                document.getElementById("math131").style.border="3px solid black";
+            }
+			function math131_out(){
+                document.getElementById("math131").style.border="";
+            }
+			function comp121_over(){
+                document.getElementById("comp121").style.border="3px solid black";
+            }
+			function comp121_out(){
+                document.getElementById("comp121").style.border="";
+            }
+			function spch250_over(){
+                document.getElementById("spch250").style.border="3px solid black";
+            }
+			function spch250_out(){
+                document.getElementById("spch250").style.border="";
+            }
+			function sci1_over(){
+                document.getElementById("science1").style.border="3px solid black";
+            }
+			function sci1_out(){
+                document.getElementById("science1").style.border="";
+            }
+			function sci2_over(){
+                document.getElementById("science2").style.border="3px solid black";
+            }
+			function sci2_out(){
+                document.getElementById("science2").style.border="";
+            }
+			function busi_over(){
+                document.getElementById("business").style.border="3px solid black";
+            }
+			function busi_out(){
+                document.getElementById("business").style.border="";
+            }
+			function mathele_over(){
+                document.getElementById("math_elective").style.border="3px solid black";
+            }
+			function mathele_out(){
+                document.getElementById("math_elective").style.border="";
+            }
+			function comp200_over(){
+                document.getElementById("comp200").style.border="3px solid black";
+            }
+			function comp200_out(){
+                document.getElementById("comp200").style.border="";
+            }
+			function engl331_over(){
+                document.getElementById("engl331").style.border="3px solid black";
+            }
+			function engl331_out(){
+                document.getElementById("engl331").style.border="";
+            }
+			function sci3_over(){
+                document.getElementById("science3").style.border="3px solid black";
+            }
+			function sci3_out(){
+                document.getElementById("science3").style.border="";
+            }
+			function stat_over(){
+                document.getElementById("statele").style.border="3px solid black";
+            }
+			function stat_out(){
+                document.getElementById("statele").style.border="";
+            }
+			function stat_down(){
+                document.getElementById("statele").style.border="3px solid black";
+				alert("Statistics Electives:\nMATH224 Probability and Statisctics\nISEN370 Eng. Statistics\nECEN356 Stochastic Process and Random Variables");
+            }
+			
+			function compele_over(){
+                document.getElementById("compele").style.border="3px solid black";
+            }
+			function compele_out(){
+                document.getElementById("compele").style.border="";
+            }
+			function comp390_over(){
+                document.getElementById("comp390").style.border="3px solid black";
+            }
+			function comp390_out(){
+                document.getElementById("comp390").style.border="";
+            }
+			function comp300_over(){
+                document.getElementById("comp300").style.border="3px solid black";
+            }
+			function comp300_out(){
+                document.getElementById("comp300").style.border="";
+            }
+			function compele2_over(){
+                document.getElementById("compele2").style.border="3px solid black";
+            }
+			function compele2_out(){
+                document.getElementById("compele2").style.border="";
+            }
+			function compele3_over(){
+                document.getElementById("compele3").style.border="3px solid black";
+            }
+			function compele3_out(){
+                document.getElementById("compele3").style.border="";
+            }
+			function free1_over(){
+                document.getElementById("free1").style.border="3px solid black";
+            }
+			function free1_out(){
+                document.getElementById("free1").style.border="";
+            }
+			function free2_over(){
+                document.getElementById("free2").style.border="3px solid black";
+            }
+			function free2_out(){
+                document.getElementById("free2").style.border="";
+            }
+			function global_over(){
+                document.getElementById("global").style.border="3px solid black";
+            }
+			function global_out(){
+                document.getElementById("global").style.border="";
+            }
+			
+            function funccomp167_over(){
                 document.getElementById("comp163").style.backgroundColor="blue";
                 document.getElementById("comp163").style.color="white";
+				document.getElementById("comp167").style.border="3px solid black";
             }
-            function func167_out(){
+            function funccomp167_out(){
                 document.getElementById("comp163").style.backgroundColor="";
                 document.getElementById("comp163").style.color="";
+				document.getElementById("comp167").style.border="";
             }
-            function func180_over(){
+            function funccomp180_over(){
                 document.getElementById("math131").style.backgroundColor="blue";
                 document.getElementById("math131").style.color="white";
+				document.getElementById("comp180").style.border="3px solid black";
             } 
-            function func180_out(){
+            function funccomp180_out(){
                 document.getElementById("math131").style.backgroundColor="";
                 document.getElementById("math131").style.color="";
+				document.getElementById("comp180").style.border="";
             } 
             function funcmath132_over(){
                 document.getElementById("math131").style.backgroundColor="blue";
                 document.getElementById("math131").style.color="white";
+				document.getElementById("math132").style.border="3px solid black";
             } 
             function funcmath132_out(){
                 document.getElementById("math131").style.backgroundColor="";
                 document.getElementById("math131").style.color="";
+				document.getElementById("math132").style.border="";
             }
             function funcmath341_over(){
                 document.getElementById("math132").style.backgroundColor="blue";
                 document.getElementById("math132").style.color="white";
+				document.getElementById("math341").style.border="3px solid black";
             } 
             function funcmath341_out(){
                 document.getElementById("math132").style.backgroundColor=""
                 document.getElementById("math132").style.color=""
+				document.getElementById("math341").style.border="";
             }
             function funccomp280_over(){
                 document.getElementById("comp167").style.backgroundColor="blue";
                 document.getElementById("comp167").style.color="white";
                 document.getElementById("comp180").style.backgroundColor="blue";
                 document.getElementById("comp180").style.color="white";
+				document.getElementById("comp280").style.border="3px solid black";
             } 
             function funccomp280_out(){
                 document.getElementById("comp167").style.backgroundColor="";
                 document.getElementById("comp167").style.color="";
                 document.getElementById("comp180").style.backgroundColor="";
                 document.getElementById("comp180").style.color="";
+				document.getElementById("comp280").style.border="";
             }
             function funccomp285_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
                 document.getElementById("math131").style.backgroundColor="blue";
                 document.getElementById("math131").style.color="white";
+				document.getElementById("comp285").style.border="3px solid black";
             } 
             function funccomp285_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp280").style.color="";
                 document.getElementById("math131").style.backgroundColor="";
                 document.getElementById("math131").style.color="";
+				document.getElementById("comp285").style.border="";
             }
             function funccomp267_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
+				document.getElementById("comp267").style.border="3px solid black";
             } 
             function funccomp267_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp280").style.color="";
+				document.getElementById("comp267").style.border="";
             }
             function funccomp360_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
+				document.getElementById("comp360").style.border="3px solid black";
             } 
             function funccomp360_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp280").style.color="";
+				document.getElementById("comp360").style.border="";
             }
             function funccomp375_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
+				document.getElementById("comp375").style.border="3px solid black";
             } 
             function funccomp375_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp280").style.color="";
+				document.getElementById("comp375").style.border="";
             }
             function funccomp322_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
+				document.getElementById("comp322").style.border="3px solid black";
             } 
             function funccomp322_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp280").style.color="";
+				document.getElementById("comp322").style.border="";
             }
             function funccomp365_over(){
                 document.getElementById("comp285").style.backgroundColor="blue";
                 document.getElementById("comp285").style.color="white";
+				document.getElementById("comp365").style.border="3px solid black";
             } 
             function funccomp365_out(){
                 document.getElementById("comp285").style.backgroundColor="";
                 document.getElementById("comp285").style.color="";
+				document.getElementById("comp365").style.border="";
             }
             function funccomp350_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
+				document.getElementById("comp350").style.border="3px solid black";
             } 
             function funccomp350_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp280").style.color="";
+				document.getElementById("comp350").style.border="";
             }
             function funccomp385_over(){
                 document.getElementById("comp360").style.backgroundColor="blue";
                 document.getElementById("comp360").style.color="white";
+				document.getElementById("comp385").style.border="3px solid black";
             } 
             function funccomp385_out(){
                 document.getElementById("comp360").style.backgroundColor="";
                 document.getElementById("comp360").style.color="";
+				document.getElementById("comp385").style.border="";
             }
             function funccomp410_over(){
                 document.getElementById("comp285").style.backgroundColor="blue";
                 document.getElementById("comp285").style.color="white";
+				document.getElementById("comp410").style.border="3px solid black";
             } 
             function funccomp410_out(){
                 document.getElementById("comp285").style.backgroundColor="";
                 document.getElementById("comp285").style.color="";
+				document.getElementById("comp410").style.border="";
             }
             function funccomp476_over(){
                 document.getElementById("comp280").style.backgroundColor="blue";
                 document.getElementById("comp280").style.color="white";
+				document.getElementById("comp476").style.border="3px solid black";
             } 
             function funccomp476_out(){
                 document.getElementById("comp280").style.backgroundColor="";
                 document.getElementById("comp410").style.color="";
+				document.getElementById("comp476").style.border="";
             }
             function funccomp496_over(){
                 document.getElementById("comp410").style.backgroundColor="blue";
                 document.getElementById("comp410").style.color="white";
+				document.getElementById("comp496").style.border="3px solid black";
             } 
             function funccomp496_out(){
                 document.getElementById("comp410").style.backgroundColor="";
                 document.getElementById("comp410").style.color="";
+				document.getElementById("comp496").style.border="";
             }
         </script>
     </body>
