@@ -22,7 +22,7 @@ login.jsp file and then having to run it on a server to view the changes.
         function hideURLbar(){
             window.scrollTo(0,1); }
     </script>
-    <link href="WEB-INF/css/login.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Code/src/main/webapp/WEB-INF/css/login.css" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="../../../JavaScript/read.js" media="all"></script>
     <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
     <script type="text/javascript">
@@ -36,11 +36,11 @@ login.jsp file and then having to run it on a server to view the changes.
 
 <body>
 <div class="login-layout wrapper">
-    <img src="files/Logo.PNG" alt="Lily Logo" class="center"/>
+    <img src="Code/src/main/webapp/files/Logo.PNG" alt="Lily Logo" class="center"/>
     <div class="login-aggie">
         <div class="login-content">
              <!--Change action to go through selenium once it is implemented -->
-            <form name="form" action="loginServlet" method="post">
+            <form name="form" action="/Code/src/main/Java/loginServlet" method="post">
                 <input class="text banner" id="bannerID" type="text" name="banner" placeholder="Banner ID">
 
                 <input class="text" id="userPIN" type="password" name="pin" placeholder="PIN">

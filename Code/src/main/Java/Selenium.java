@@ -38,8 +38,7 @@ public class Selenium {
             // splits string by white space (subject to change when list gets added)
             String[] s = g.getUserInfo().split(" ");
             courseRecommendations = new CourseRecommendations(g.getPerson());
-            System.out.print(courseRecommendations.toString());
-            //System.out.println("PERSON:" + courseRecommendations);
+            //System.out.print(courseRecommendations.toString());
             display.add(s[0]);
             display.add(s[1]);
             display.add(courseRecommendations.takeThese());
@@ -65,11 +64,8 @@ public class Selenium {
             //access site through chrome.exe
             //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
             System.setProperty("webdriver.chrome.driver", "/Users/robbie/Downloads/chromedriver");
-            /*ChromeOptions options = new ChromeOptions();
-            List<String> chromeSwitches = new ArrayList<>();
-            chromeSwitches.add("--headless");
-            chromeSwitches.add("--disable-gpu");
-            options.addArguments(chromeSwitches);*/
+            //ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--headless");
 
             //add options
             driver = new ChromeDriver();

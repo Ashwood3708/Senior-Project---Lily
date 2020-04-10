@@ -37,6 +37,7 @@
           <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-edge-driver:2.53.0" />
           <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:2.53.0" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:7.0.27" />
+          <element id="library" level="project" name="Selenium" />
         </element>
       </element>
     </root>

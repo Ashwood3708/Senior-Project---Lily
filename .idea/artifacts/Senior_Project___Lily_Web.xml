@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="Senior-Project---Lily:Web">
+    <output-path>$PROJECT_DIR$/SeniorProject-Lily/out/artifacts/Senior_Project___Lily_Web</output-path>
+    <root id="archive" name="Senior-Project---Lily_Web.war">
+      <element id="artifact" artifact-name="Senior-Project---Lily:Web exploded" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/SeniorProject-Lily/out/artifacts/Senior_Project___Lily_Web_exploded/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib" />
+      </element>
+    </root>
+  </artifact>
+</component>
