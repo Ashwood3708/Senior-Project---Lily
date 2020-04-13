@@ -9,7 +9,7 @@
         }
         table{
             color:blue;
-            border:1px;
+            border:1;
             border-color: darkblue;
             text-align: left;
             resize: both;
@@ -24,7 +24,7 @@
         }
 	
         h4{
-            font-size: 20px;
+            font-size: 200;
             color: red;
             text-align: center;
         }
@@ -75,10 +75,10 @@
         
         <h1 align="center">Computer Science BS Curriculum Guide for Fall 2016 (For Students Starting with Calculus I)</h1>
         <fieldset>
-            <h4 id="disclaimer" align="center"><u>Disclaimer:</u> This is an education tool to aid the user to aline a prerequisites to core classes.  This tools is a supplemental assesment aid to plan for the future and assess where you are currently.  Refer to your advisor to verify the correctness of the provided information.  The creators of this tool are not held responsible for any incorrect, misunderstood, or out of date information.  Use this aid at your own risk.</h4>
+            <h4 id="disclaimer" align="center"><u>Disclaimer:</u> This is an education tool to aid the user to aline prerequisites to core classes and to view approved electives.  This tools is a supplemental assesment aid to plan for the future and assess where you are currently.  Refer to your advisor to verify the correctness of the provided information.  The creators of this tool are not held responsible for any incorrect, misunderstood, or out of date information.  Use this aid at your own risk.</h4>
         </fieldset>
         <h2>
-			Viewing Instructions: Hover over a course to view prerequisite/s for the course (selected course/s).  Refer to the example displayed below.
+			Viewing Instructions: Hover over a course to view prerequisite/s for the course.<br>Click on any electives to see approved electives for more information. Refer to the example displayed below.
 		</h2>
 		<table  id="legendTable" align="center">
 			<tr>
@@ -116,9 +116,9 @@
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="socialScience" onmouseover="ss_over()" onmouseout="ss_out()">Social/Behavior Sciences Elective</td>
+				<td id="socialScience" onmouseover="ss_over()" onmouseout="ss_out()" onmousedown="gen_ed_down()">Social/Behavior Sciences Elective</td>
                 <td align="right">3</td>
-                <td id="knowledge" onmouseover="know_over()" onmouseout="know_out()">Knowledge of African-American Culture and History</td>
+                <td id="knowledge" onmouseover="know_over()" onmouseout="know_out()" onmousedown="gen_ed_down()">Knowledge of African-American Culture and History</td>
                 <td align="right">3</td>
             </tr>
             <tr>
@@ -163,17 +163,17 @@
             <tr>
                 <td id="spch250" onmouseover="spch250_over()" onmouseout="spch250_out()">SPCH 250 Speech Fundamentals (Humanities/Fine Arts)</td>
                 <td align="right">3</td>
-                <td id ="global" onmouseover="global_over()" onmouseout="global_out()">Global Awareness</td>
+                <td id ="global" onmouseover="global_over()" onmouseout="global_out()" onmousedown="gen_ed_down()">Global Awareness</td>
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="science1" onmouseover="sci1_over()" onmouseout="sci1_out()">Approved Science Elective [3]</td>
+                <td id="science1" onmouseover="sci1_over()" onmouseout="sci1_out()" onmousedown="sci_down()">Approved Science Elective [3]</td>
                 <td align="right">4</td>
-                <td id="science2" onmouseover="sci2_over()" onmouseout="sci2_out()">Approved Science Elective [3]</td>
+                <td id="science2" onmouseover="sci2_over()" onmouseout="sci2_out()" onmousedown="sci_down()">Approved Science Elective [3]</td>
                 <td align="right">4</td>
             </tr>
             <tr>
-                <td id="business" onmouseover="busi_over()" onmouseout="busi_out()">Business Elective [5]</td>
+                <td id="business" onmouseover="busi_over()" onmouseout="busi_out()" onmousedown="busi_down()">Business Elective [5]</td>
                 <td align="right">3</td>
                 <td id="comp285" onmouseover="funccomp285_over()" onmouseout="funccomp285_out()">COMP285 Analysis of Algorithms</td>
                 <td align="right">3</td>
@@ -181,7 +181,7 @@
             <tr>
                 <td id="math341" onmouseover="funcmath341_over()" onmouseout="funcmath341_out()">MATH341 Diff. Equations</td>
                 <td align="right">3</td>
-                <td id="math_elective" onmouseover="mathele_over()" onmouseout="mathele_out()">Approved Mathematics Elective [2]</td>
+                <td id="math_elective" onmouseover="mathele_over()" onmouseout="mathele_out()" onmousedown="mathele_down()">Approved Mathematics Elective [2]</td>
                 <td align="right">3</td>
             </tr>
             <tr>
@@ -212,9 +212,9 @@
                 <td></td>
             </tr>
             <tr>
-                <td id="science3" onmouseover="sci3_over()" onmouseout="sci3_out()">Approved Science Elective [3]</td>
+                <td id="science3" onmouseover="sci3_over()" onmouseout="sci3_out()" onmousedown="sci_down()">Approved Science Elective [3]</td>
                 <td align="right">4</td>
-                <td id="engl331" onmouseover="engl311_over()" onmouseout="engl331_out()">ENGL331 Writing Science & Tech.</td>
+                <td id="engl331" onmouseover="engl331_over()" onmouseout="engl331_out()">ENGL331 Writing Science & Tech.</td>
                 <td align="right">3</td>
             </tr>
             <tr>
@@ -236,7 +236,7 @@
                 <td align="right">3</td>
             </tr>
             <tr>
-                <td id="compele" onmouseover="compele_over()" onmouseout="compele_out()">Approved COMP Elective</td>
+                <td id="compele" onmouseover="compele_over()" onmouseout="compele_out()" onmousedown="compele_down()">Approved COMP Elective</td>
                 <td align="right">3</td>
                 <td id="comp390" onmouseover="comp390_over()" onmouseout="comp390_out()">COMP390 Soc. Implications of Computing (Ethics)</td>
                 <td align="right">3</td>
@@ -271,13 +271,13 @@
             <tr>
                 <td id="comp410" onmouseover="funccomp410_over()" onmouseout="funccomp410_out()">COMP410 Software Engineering</td>
                 <td align="right">3</td>
-                <td id="compele2" onmouseover="compele2_over()" onmouseout="compele2_out()">Approved COMP Elective [4]</td>
+                <td id="compele2" onmouseover="compele2_over()" onmouseout="compele2_out()" onmousedown="compele_down()">Approved COMP Elective [4]</td>
                 <td align="right">3</td>
             </tr>
             <tr>
                 <td id="comp476" onmouseover="funccomp476_over()" onmouseout="funccomp476_out()">COMP476 Network Computer Systems</td>
                 <td align="right">3</td>
-                <td id="compele3" onmouseover="compele3_over()" onmouseout="compele3_out()">Approved COMP Elective [4]</td>
+                <td id="compele3" onmouseover="compele3_over()" onmouseout="compele3_out()" onmousedown="compele_down()">Approved COMP Elective [4]</td>
                 <td align="right">3</td>
             </tr>
             <tr>
@@ -329,7 +329,7 @@
 		
 		
         <script>
-			
+
 			function eng100_over(){
                 document.getElementById("eng100").style.border="3px solid black";
             }
@@ -347,6 +347,9 @@
             }
 			function ss_out(){
                 document.getElementById("socialScience").style.border="";
+            }
+			function gen_ed_down(){
+                window.location="gen_ed_electives.html";
             }
 			function know_over(){
                 document.getElementById("knowledge").style.border="3px solid black";
@@ -390,6 +393,9 @@
 			function sci1_out(){
                 document.getElementById("science1").style.border="";
             }
+			function sci_down(){
+				alert("Science Electives:\n Take 12 hours of one of the following groups:\n  Group1:\n   -CHEM106/116 and CHEM106/116 and [PHYS241 or BIOL100 or BIOL101 or SLMG200}\n\n Group2:\n   -PHYS241/251 and PHYS242/252 and [CHEM106/116 or BIOL100 or SLMG200]");
+			}
 			function sci2_over(){
                 document.getElementById("science2").style.border="3px solid black";
             }
@@ -402,12 +408,19 @@
 			function busi_out(){
                 document.getElementById("business").style.border="";
             }
+			function busi_down(){
+				alert("Business Electives:\n Take 3 hours of the following:\n   -MGMT110\n   -MGMT132\n   -MKTG230\n   -ECON200\n   -ECON201");
+			}
 			function mathele_over(){
                 document.getElementById("math_elective").style.border="3px solid black";
             }
 			function mathele_out(){
                 document.getElementById("math_elective").style.border="";
             }
+			function mathele_down(){
+				document.getElementById("math_elective").style.border="3px solid black";
+				alert("Math Electives:\n   -MATH340 Numerical Methods\n   -MATH351 Linear Algebra")
+			}
 			function comp200_over(){
                 document.getElementById("comp200").style.border="3px solid black";
             }
@@ -433,8 +446,7 @@
                 document.getElementById("statele").style.border="";
             }
 			function stat_down(){
-                document.getElementById("statele").style.border="3px solid black";
-				alert("Statistics Electives:\nMATH224 Probability and Statisctics\nISEN370 Eng. Statistics\nECEN356 Stochastic Process and Random Variables");
+				alert("Statistics Electives:\n   -MATH224 Probability and Statisctics\n   -ISEN370 Eng. Statistics\n   -ECEN356 Stochastic Process and Random Variables");
             }
 			
 			function compele_over(){
@@ -442,6 +454,10 @@
             }
 			function compele_out(){
                 document.getElementById("compele").style.border="";
+            }
+			function compele_down(){
+                document.getElementById("statele").style.border="3px solid black";
+				alert("COMP Electives:\n Take 9 hours of the following:\n   -Any non-required COMP 300-level or above\n   -MGMT335\n   -BUED342\n   -ECEN427\n   -MATH360\n   -MATH365\n   -CST340");
             }
 			function comp390_over(){
                 document.getElementById("comp390").style.border="3px solid black";
