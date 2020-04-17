@@ -9,7 +9,6 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="module" name="JUnit4" module-name="Senior-Project---Lily" />
-          <element id="file-copy" path="$USER_HOME$/Downloads/pdfbox-app-2.0.19.jar" />
           <element id="library" level="project" name="Maven: com.google.guava:guava:19.0" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.3" />
           <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-support:2.53.0" />
@@ -37,7 +36,6 @@
           <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-edge-driver:2.53.0" />
           <element id="library" level="project" name="Maven: org.seleniumhq.selenium:selenium-chrome-driver:2.53.0" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:7.0.27" />
-          <element id="library" level="project" name="Selenium" />
         </element>
       </element>
     </root>

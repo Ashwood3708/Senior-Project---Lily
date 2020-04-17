@@ -62,13 +62,13 @@ public class Selenium {
     public Boolean run(String loginBanner, String loginPin) throws NoSuchMethodError {
         try {
             //access site through chrome.exe
-            //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-            System.setProperty("webdriver.chrome.driver", "/Users/robbie/Downloads/chromedriver");
-            //ChromeOptions options = new ChromeOptions();
-            //options.addArguments("--headless");
+            //System.setProperty("webdriver.chrome.driver", "chromedriver");
+            System.setProperty("webdriver.chrome.driver", "/Users/robbie/Documents/Sr2nd/COMP496/Senior-Project---Lily/Code/src/main/Java/chromedriver");
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
 
             //add options
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
             driver.navigate().to("https://ssbprod-ncat.uncecs.edu/pls/NCATPROD/twbkwbis.P_WWWLogin");
 
             //login

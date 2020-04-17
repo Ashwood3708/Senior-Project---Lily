@@ -28,6 +28,7 @@
     <img src="files/Logo.PNG" alt="Lily Logo" class="center"/>
     <div class="login-aggie">
         <div class="login-content">
+            <p>Log into this website with your Aggie Access credentials.</p>
             <!-- Login form that calls a Java Servlet so login information can be retrieved -->
             <form name="form" method="post" action="loginServlet">
                 <input class="text banner" id="bannerID" type="text" name="banner" placeholder="Banner ID">

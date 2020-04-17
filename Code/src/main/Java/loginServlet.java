@@ -50,6 +50,12 @@ public class loginServlet extends HttpServlet{
         if(aggieAccessLogin.equals(true)){
             usersHomePageData = selenium.checkTranscript();
             if(usersHomePageData != null) {
+                String[] getList =  usersHomePageData.get(2).split(",");
+                String displayList = "<ul>";
+                for(int i = 0; i < getList.length; i++){
+                    displayList += "<li>" + getList[i] + "</li>";
+                }
+                displayList += "</ul";
                 // html code that creates the head of the home page (can also see this code in home.html)
                 String head = "<!DOCTYPE html>\n" +
                         "<html lang='en'>\n" +
@@ -100,7 +106,7 @@ public class loginServlet extends HttpServlet{
                         "            <td colspan='2'><b>Recommendations</b></td>\n" +
                         "        </tr>\n" +
                         "        <tr>\n" +
-                        "            <td>" + usersHomePageData.get(2) + "</td>\n" + // Gets the Class Recommendations to display in table
+                        "            <td>" + displayList + "</td>\n" + // Gets the Class Recommendations to display in table
                         "        </tr>\n" +
                         "       <!-- <tr class='header'>\n" +
                         "            <td colspan='2'><b>Pre-Requisitions</b></td>\n" +
@@ -118,7 +124,7 @@ public class loginServlet extends HttpServlet{
                         "    </table>\n" +
                         "</div>\n" +
                         "    <div class='table-info'>\n" +
-                        "        <form name='form' action='/index.jsp' method='post'>\n" +
+                        "        <form name='form' action='index.jsp' method='post'>\n" +
                         "\n" +
                         "            <input type='submit' value='SIGNOUT'>\n" +
                         "\n" +
