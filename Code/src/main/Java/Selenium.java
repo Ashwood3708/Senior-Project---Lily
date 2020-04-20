@@ -16,7 +16,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Selenium {
     private WebDriver driver;
@@ -115,8 +114,5 @@ public class Selenium {
         BufferedWriter writer = new BufferedWriter(new FileWriter("transcript.txt"));
         writer.write(buffer);
         writer.close();
-    }
-    public CourseRecommendations getCourseRecommendations(){
-        return courseRecommendations;
     }
 }

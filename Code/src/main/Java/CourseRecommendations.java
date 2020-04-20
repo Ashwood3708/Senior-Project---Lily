@@ -338,11 +338,10 @@ public class CourseRecommendations {
     }
 
     public String takeThese() {
-        String k = System.lineSeparator();
-        String key = "Required classes to take: " + classestoTake.size() + k;
-        for (classRequirements clss : classestoTake) {
-            key += clss.name + k;
+        String key = "<ul>";
+        for (String clss : finalList) {
+            key += "<li>" + clss + "</li>";
         }
-        return k + finalList + k;
+        return key + "</ul>";
     }
 }

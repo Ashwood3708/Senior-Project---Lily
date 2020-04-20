@@ -52,9 +52,12 @@ public class loginServlet extends HttpServlet{
             if(usersHomePageData != null) {
                 String[] getList =  usersHomePageData.get(2).split(",");
                 String displayList = "<ul>";
-                for(int i = 0; i < getList.length; i++){
-                    displayList += "<li>" + getList[i] + "</li>";
+               /* for(int i = 0; i < getList.length; i++){
+                    displayList += getList[i] + "\n";
                 }
+                for(String s: getList){
+                    displayList += "<li>" + s + "</li>";
+                }*/
                 displayList += "</ul";
                 // html code that creates the head of the home page (can also see this code in home.html)
                 String head = "<!DOCTYPE html>\n" +
@@ -106,7 +109,7 @@ public class loginServlet extends HttpServlet{
                         "            <td colspan='2'><b>Recommendations</b></td>\n" +
                         "        </tr>\n" +
                         "        <tr>\n" +
-                        "            <td>" + displayList + "</td>\n" + // Gets the Class Recommendations to display in table
+                        "            <td>" + usersHomePageData.get(2) + "</td>\n" + // Gets the Class Recommendations to display in table
                         "        </tr>\n" +
                         "       <!-- <tr class='header'>\n" +
                         "            <td colspan='2'><b>Pre-Requisitions</b></td>\n" +
