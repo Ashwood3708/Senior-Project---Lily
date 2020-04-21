@@ -9,6 +9,7 @@ import java.util.Scanner;
  * what I changed:
  * readTxt() was altered
  * fill current classes() was added
+ * getUserInfo() was added
  */
 
 public class pdfParser {
@@ -307,4 +308,12 @@ public class pdfParser {
         return person;
     }
 
+    /**
+     * Gets total GPA, major GPA, and Class Recommendations list from Student's person object and send it to
+     * Selenium.java to be updated on front end.
+     * @return
+     */
+    public String getUserInfo(){
+        return person.getTotalGPA() + " " + person.getMajorGPA();
+    }
 }

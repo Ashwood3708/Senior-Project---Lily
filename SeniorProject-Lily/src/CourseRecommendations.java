@@ -10,6 +10,7 @@ import java.util.*;
  * getFinalList() -added
  * getRequiredClasses() -added
  * new student var -added
+ * takeThese() -added
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * constructor  -edited
  * creatFinalList() -edited
@@ -396,5 +397,13 @@ public class CourseRecommendations {
             currClasses += f + "\n";
         }
         return currClasses;
+    }
+
+    public String takeThese() {
+        String key = "<ul>";
+        for (String clss : finalList) {
+            key += "<li>" + clss + "</li>";
+        }
+        return key + "</ul>";
     }
 }
