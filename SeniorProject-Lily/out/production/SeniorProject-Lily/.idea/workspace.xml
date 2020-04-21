@@ -2,33 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/selenium_java_3_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/selenium_java_3_141_All.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/selenium_java_3_141_All2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Senior-Project---Lily.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Selenium_Files_03.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs_03.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SeniorProject-Lily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProject-Lily.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/geckodriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/libs/chromedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/SeniorProject-Lily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/SeniorProject-Lily.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/pdfParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/pdfParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/transcript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/transcript.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/CHANGELOG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/NOTICE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/chromedriver_win32/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/client-combined-3.141.59-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/client-combined-3.141.59.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/geckodriver-v0.26.0-win64/geckodriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/libs/byte-buddy-1.8.15.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/libs/commons-exec-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/libs/guava-25.0-jre.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/libs/okhttp-3.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium-java-3.141.59/libs/okio-1.14.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CourseRecommendations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CourseRecommendations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Selenium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Selenium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pdfParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdfParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transcript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/transcript.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +57,7 @@
   <component name="ProjectId" id="1Xg2ADuqDTfAWZ9M5tJevpzlgam" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -73,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/all/code imports/Selenium_Files" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -146,7 +139,10 @@
       <workItem from="1585609839826" duration="2218000" />
       <workItem from="1585670384395" duration="15468000" />
       <workItem from="1585851420623" duration="12554000" />
-      <workItem from="1586190231474" duration="5932000" />
+      <workItem from="1586190231474" duration="9203000" />
+      <workItem from="1587420416921" duration="8710000" />
+      <workItem from="1587431537843" duration="587000" />
+      <workItem from="1587476227468" duration="941000" />
     </task>
     <task id="LOCAL-00001" summary="recommendations version 1">
       <created>1585863056403</created>
@@ -169,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585863435144</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="put all .jars in libs folder">
+      <created>1586196527307</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586196527307</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,9 +210,29 @@
     <MESSAGE value="recommendations version 1" />
     <MESSAGE value="recommendations version 1.1" />
     <MESSAGE value="recommendations version 1.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="recommendations version 1.2" />
+    <MESSAGE value="put all .jars in libs folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="put all .jars in libs folder" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CourseRecommendations.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pdfParser.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pdfParser.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="items" />

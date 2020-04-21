@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * what I changed:
+ * readTxt() was altered
+ * fill current classes() was added
+ */
 
 public class pdfParser {
     private HashSet<String> electives;
@@ -32,8 +37,7 @@ public class pdfParser {
         while(scan.hasNext()) {
             line = scan.nextLine().trim();
 
-            if (line.contains("TRANSFER CREDIT ") || line.contains("Major and Department:") || line.equals("Overall:") || line.substring(line.length() - 1).equals("R") && line.contains("Subject")) {
-
+            if (line.contains("COURSES IN PROGRESS ") || line.contains("TRANSFER CREDIT ") || line.contains("Major and Department:") || line.equals("Overall:") || line.substring(line.length() - 1).equals("R") && line.contains("Subject")) {
 
             //grabs transfer credits
             if (line.contains("TRANSFER CREDIT ACCEPTED BY IN")) {
@@ -104,6 +108,22 @@ public class pdfParser {
                 person.setMajorGPA(getMajorGPA());
             }
 
+            //grabs current classes
+                if (line.contains("COURSES IN PROGRESS ") && line.contains("-Top-")){
+                    line = scan.nextLine();
+                    line = scan.nextLine();
+                    line = scan.nextLine();
+                    while(!line.contains("Unofficial Transcript")){
+                        String creditHours = scan.nextLine().trim();
+                        String QPoints = "0.0";
+                        String items[] = line.split(" ");
+                        fillCurrentClasses(items, creditHours, QPoints);
+                        numOfClasses++;
+                        line = scan.nextLine();
+                    }
+                }
+
+
         }
         }
     }
@@ -148,7 +168,6 @@ public class pdfParser {
         person.getList().add(temp);
         }catch(Exception e){
             System.out.println("couldn't fill class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
-            System.exit(-1);
         }
     }
 
@@ -178,6 +197,22 @@ public class pdfParser {
         }catch(Exception e){
             System.out.println("couldn't fill transfer class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
             System.exit(-1);
+        }
+    }
+
+    public void fillCurrentClasses(String[] items, String creditHours, String QPoints){
+        try{
+            String concat = "";
+            //Fill in class object
+            Class temp = new Class();
+            temp.subject = items[0].trim();
+            temp.courseNum = items[1].trim();
+            temp.level = items[2].trim();
+            temp.setName();
+            person.getCurrentClasses().add(temp.name);
+        }catch(Exception e){
+            System.out.println("couldn't fill-current-class: "+ "\n string: "+ items[0]+" "+items[1] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
+            System.exit(-5);
         }
     }
 

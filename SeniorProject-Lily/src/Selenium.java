@@ -14,7 +14,7 @@ public class Selenium {
     private CourseRecommendations courseRecommendations;
 
     public Selenium(String x, String y) {
-        run(x, y);
+         run(x, y);
          pdfParser g = new pdfParser();
         try {
             g.readTxt("transcript.txt");
@@ -71,7 +71,7 @@ public class Selenium {
         } catch (Exception e) {
             System.out.println("incorrect login");
             driver.quit();
-            System.exit(-1);
+            //System.exit(-1);
         }
     }
 

@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Senior-Project---Lily.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Selenium_Files_03.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs_03.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeniorProject-Lily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SeniorProject-Lily.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/libs/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations$classRequirements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/CourseRecommendations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Selenium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Selenium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/SeniorProject-Lily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/SeniorProject-Lily.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/pdfParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/pdfParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/transcript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/transcript.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CourseRecommendations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CourseRecommendations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Selenium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Selenium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pdfParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pdfParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transcript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/transcript.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/all/code imports/Selenium_Files" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -123,6 +141,9 @@
       <workItem from="1585670384395" duration="15468000" />
       <workItem from="1585851420623" duration="12554000" />
       <workItem from="1586190231474" duration="9203000" />
+      <workItem from="1587420416921" duration="8710000" />
+      <workItem from="1587431537843" duration="587000" />
+      <workItem from="1587476227468" duration="12857000" />
     </task>
     <task id="LOCAL-00001" summary="recommendations version 1">
       <created>1585863056403</created>
@@ -194,6 +215,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="put all .jars in libs folder" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/pdfParser.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="items" />

@@ -2,286 +2,206 @@ This is NOT an official transcript. Courses which are in progress may also be in
 Institution Credit    Transcript Totals    Courses in Progress
 Transcript Data
 STUDENT INFORMATION
-Birth Date: 21-MAY
+Birth Date: 15-JUL
 Student Type: Continuing
 Curriculum Information
 Current Program
 Bachelor of Science
 College: College of Engineering
-Major and Department: Computer Science, Computer Science
+Major and Department: Computer Engineering, Electr & Computer Engineering
   ***This is NOT an Official Transcript***
-  DEGREE AWARDED
-Applied for Graduation: Bachelor of Science Degree Date:  
-Curriculum Information
-Primary Degree
-College: College of Engineering
-Major: Computer Science
-    INSTITUTION CREDIT      -Top-
-Term: Fall 2016
-Additional Standing: Dean's List
+      INSTITUTION CREDIT      -Top-
+Term: Fall 2017
 Subject Course Level Title Grade Credit Hours Quality Points R
-COMP 121 UG Computer Sci Freshman Colloqui A
-1.000
-4.00
-    ENGL 100 UG Ideas & Their Expressions I A-
+ENGL 100 UG Ideas & Their Expressions I A-
 3.000
 11.10
-    GEEN 111 UG College of Engi Colloquium I A-
-1.000
-3.70
-    GEEN 163 UG Intro Computer Programming A
+    FCS 245 UG Introduction to Food Science A-
 3.000
-12.00
-    HIST 103 UG NC A&T SU:Leg Soc Act B+
+11.10
+    FRST 101 UG College Success C-
+1.000
+1.70
+    GEEN 111 UG College of Engi Colloquium I A
+1.000
+4.00
+    HIST 107 UG African-Amer Hist Since 1877 B
+3.000
+9.00
+    HIST 206 UG Pre-Modern World History B
+3.000
+9.00
+    MATH 103 UG Col Alge and Trig for En Sci I B
+3.000
+9.00
+    Term Totals (Undergraduate)
+  Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
+Current Term:
+17.000
+17.000
+17.000
+17.000
+54.90
+3.22
+Cumulative:
+17.000
+17.000
+17.000
+17.000
+54.90
+3.22
+  Unofficial Transcript
+Term: Spring 2018
+Subject Course Level Title Grade Credit Hours Quality Points R
+CHEM 106 UG General Chemistry VI W
+3.000
+0.00
+    COMP 163 UG Intro Computer Programming B+
 3.000
 9.90
+    ECEN 101 UG Engi Prob Solving With MATLAB B+
+3.000
+9.90
+    ENGL 101 UG Ideas & Their Expressions B+
+3.000
+9.90
+    MATH 104 UG Col Al and Trig for En Sci II C
+3.000
+6.00
+    Term Totals (Undergraduate)
+  Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
+Current Term:
+15.000
+12.000
+12.000
+12.000
+35.70
+2.97
+Cumulative:
+32.000
+29.000
+29.000
+29.000
+90.60
+3.12
+  Unofficial Transcript
+Term: Fall 2018
+Subject Course Level Title Grade Credit Hours Quality Points R
+CHEM 106 UG General Chemistry VI D
+3.000
+3.00
+    COMP 121 UG Computer Sci Freshman Colloqui A
+1.000
+4.00
+    COMP 167 UG Computer Program Design C+
+3.000
+6.90
     MATH 131 UG Calculus I A
 4.000
 16.00
+    SPCH 250 UG Speech Fundamentals A
+3.000
+12.00
     Term Totals (Undergraduate)
   Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
 Current Term:
-15.000
-15.000
-15.000
-15.000
-56.70
-3.78
+14.000
+14.000
+14.000
+14.000
+41.90
+2.99
 Cumulative:
-15.000
-15.000
-15.000
-15.000
-56.70
-3.78
+46.000
+43.000
+43.000
+43.000
+132.50
+3.08
   Unofficial Transcript
-Term: Spring 2017
-Additional Standing: Dean's List
+Term: Spring 2019
 Subject Course Level Title Grade Credit Hours Quality Points R
-COMP 180 UG Discrete Structures B+
+COMP 280 UG Data Structures B-
 3.000
-9.90
-    ENGL 101 UG Ideas & Their Expressions C
+8.10
+    ECEN 227 UG Intro to Finite Autom Dis Math B-
+3.000
+8.10
+    MATH 132 UG Calculus II C
+4.000
+8.00
+    PHYS 241 UG General Physics I C
 3.000
 6.00
-    GEEN 165 UG Computer Program Design B+
-4.000
-13.20
-    MATH 132 UG Calculus II B
-4.000
-12.00
-    SPCH 250 UG Speech Fundamentals A-
-3.000
-11.10
-    Term Totals (Undergraduate)
-  Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
-Current Term:
-17.000
-17.000
-17.000
-17.000
-52.20
-3.07
-Cumulative:
-32.000
-32.000
-32.000
-32.000
-108.90
-3.40
-  Unofficial Transcript
-Term: Fall 2017
-Additional Standing: Dean's List
-Subject Course Level Title Grade Credit Hours Quality Points R
-BUED 279 UG Personal Finance A-
-3.000
-11.10
-    COMP 280 UG Data Structures A
-3.000
-12.00
-    MATH 341 UG Intro Differential Equations B+
-3.000
-9.90
-    MGMT 110 UG Business Environment A
-3.000
-12.00
-    PHYS 241 UG General Physics I C+
-3.000
-6.90
-    PHYS 251 UG General Physics I Lab A-
-1.000
-3.70
-    Term Totals (Undergraduate)
-  Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
-Current Term:
-16.000
-16.000
-16.000
-16.000
-55.60
-3.47
-Cumulative:
-48.000
-48.000
-48.000
-48.000
-164.50
-3.42
-  Unofficial Transcript
-Term: Spring 2018
-Additional Standing: Dean's List
-Subject Course Level Title Grade Credit Hours Quality Points R
-COMP 200 UG Computer Sci Sophomore Colloq A
-1.000
-4.00
-    COMP 267 UG Data Base Design A-
-3.000
-11.10
-    COMP 285 UG Analysis of Algorithms A
-3.000
-12.00
-    MATH 351 UG Linear Algebra & Matrix Theory C+
-3.000
-6.90
-    PHIL 201 UG Business Ethics A
-3.000
-12.00
-    PHYS 242 UG General Physics II B+
-3.000
-9.90
-    PHYS 252 UG General Physics II Lab C+
+    PHYS 251 UG General Physics I Lab C+
 1.000
 2.30
     Term Totals (Undergraduate)
   Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
 Current Term:
-17.000
-17.000
-17.000
-17.000
-58.20
-3.42
+14.000
+14.000
+14.000
+14.000
+32.50
+2.32
 Cumulative:
-65.000
-65.000
-65.000
-65.000
-222.70
-3.42
-  Unofficial Transcript
-Term: Fall 2018
-Additional Standing: Chancellor's List
-Subject Course Level Title Grade Credit Hours Quality Points R
-BIOL 100 UG Biological Science A
-4.000
-16.00
-    COMP 360 UG Programming Languages B
-3.000
-9.00
-    COMP 375 UG Comp Architecture & Org A-
-3.000
-11.10
-    COMP 390 UG Social Implications Computing A
-3.000
-12.00
-    ENGL 331 UG Writing Science & Technology A
-3.000
-12.00
-    MATH 224 UG Intro Probability & Statistics A
-3.000
-12.00
-    Term Totals (Undergraduate)
-  Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
-Current Term:
-19.000
-19.000
-19.000
-19.000
-72.10
-3.79
-Cumulative:
-84.000
-84.000
-84.000
-84.000
-294.80
-3.50
-  Unofficial Transcript
-Term: Spring 2019
-Additional Standing: Dean's List
-Subject Course Level Title Grade Credit Hours Quality Points R
-COMP 300 UG Computer Science Jr Colloquium B
-1.000
-3.00
-    COMP 350 UG Operating Systems B
-3.000
-9.00
-    COMP 365 UG AI & Machine Learning A
-3.000
-12.00
-    COMP 410 UG Software Engineering A-
-3.000
-11.10
-    COMP 476 UG Networked Computer Systems A
-3.000
-12.00
-    Term Totals (Undergraduate)
-  Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
-Current Term:
-13.000
-13.000
-13.000
-13.000
-47.10
-3.62
-Cumulative:
-97.000
-97.000
-97.000
-97.000
-341.90
-3.52
+60.000
+57.000
+57.000
+57.000
+165.00
+2.89
   Unofficial Transcript
 Term: Fall 2019
 Subject Course Level Title Grade Credit Hours Quality Points R
-COMP 322 UG Internet Systems C+
+COMP 285 UG Analysis of Algorithms C
 3.000
-6.90
-    COMP 340 UG Game Intelligence B-
+6.00
+    ECEN 200 UG Electric Circuit Analysis B
 3.000
-8.10
-    COMP 385 UG Theory of Computing B+
+9.00
+    ECEN 206 UG Instrumenta and Networks Lab B-
+1.000
+2.70
+    ECEN 327 UG Digital Logic B
 3.000
-9.90
-    COMP 495 UG Senior Project I A
+9.00
+    ECEN 328 UG Digital Logic Laboratory B
+1.000
+3.00
+    GEEN 100 UG Engineering Design & Ethics C
+2.000
+4.00
+    MATH 341 UG Intro Differential Equations W
 3.000
-12.00
+0.00
     Term Totals (Undergraduate)
   Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
 Current Term:
-12.000
-12.000
-12.000
-12.000
-36.90
-3.07
+16.000
+13.000
+13.000
+13.000
+33.70
+2.59
 Cumulative:
-109.000
-109.000
-109.000
-109.000
-378.80
-3.47
+76.000
+70.000
+70.000
+70.000
+198.70
+2.83
   Unofficial Transcript
 TRANSCRIPT TOTALS (UNDERGRADUATE)      -Top-
   Attempt Hours Passed Hours Earned Hours GPA Hours Quality Points GPA
 Total Institution:
-109.000
-109.000
-109.000
-109.000
-378.80
-3.47
+76.000
+70.000
+70.000
+70.000
+198.70
+2.83
 Total Transfer:
 0.000
 0.000
@@ -290,22 +210,41 @@ Total Transfer:
 0.00
 0.00
 Overall:
-109.000
-109.000
-109.000
-109.000
-378.80
-3.47
+76.000
+70.000
+70.000
+70.000
+198.70
+2.83
   Unofficial Transcript
 COURSES IN PROGRESS       -Top-
 Term: Spring 2020
 Subject Course Level Title Credit Hours
-COMP 320 UG Fundamentals of Cyber Security
+CHEM 106 UG General Chemistry VI
 3.000
-COMP 496 UG Senior Project II
+COMP 350 UG Operating Systems
 3.000
-FCS 135 UG Food and Man's Survival
+ECEN 375 UG Computer Architec and Organiza
 3.000
-FCS 245 UG Introduction to Food Science
+ECEN 427 UG Intro to Microprocessors
+3.000
+ECEN 433 UG Microprocessor Laboratory
+1.000
+MATH 341 UG Intro Differential Equations
+3.000
+  Unofficial Transcript
+Term: Fall 2020
+Subject Course Level Title Credit Hours
+ECEN 300 UG Electric Circuit Analysis II
+3.000
+ECEN 306 UG Networks and Sys Laboratory
+1.000
+MATH 231 UG Calculus III
+4.000
+PHYS 242 UG General Physics II
+3.000
+PHYS 252 UG General Physics II Lab
+1.000
+PSYC 101 UG General Psychology
 3.000
   Unofficial Transcript
