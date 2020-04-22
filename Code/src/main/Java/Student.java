@@ -2,6 +2,12 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+/**
+ * what i added:
+ * new var and get method currentClasses
+ *
+ */
+
 public class Student {
 
     private String major;
@@ -10,6 +16,7 @@ public class Student {
     private int numOfClasses;
     private ArrayList<Class> list;
     private HashSet<String> names;
+    private HashSet<String> currentClasses;
 
     public Student(){
         major = "undeclared";
@@ -18,6 +25,7 @@ public class Student {
         numOfClasses = 0;
         list = new ArrayList();
         names = new HashSet<>();
+        currentClasses = new HashSet<>();
     }
 
     public void addNames(){
@@ -65,6 +73,8 @@ public class Student {
     public ArrayList<Class> getList() {
         return list;
     }
+
+    public HashSet<String> getCurrentClasses(){return currentClasses;}
 
     public void setList(ArrayList<Class> list) {
         this.list = list;

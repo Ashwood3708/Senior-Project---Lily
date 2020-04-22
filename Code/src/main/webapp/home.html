@@ -36,42 +36,72 @@ and then having to run login.jsp on a server, log in and and then view the chang
         <tbody>
         <tr class="header">
             <td><b>Cumulative GPA</b></td>
-            <td><b>Major GPA</b></td>
+            <td colspan="2"><b>Major GPA</b></td>
         </tr>
         <tr class="header">
             <td>3.75</td>
-            <td>3.73</td>
+            <td colspan="2">3.73</td>
         </tr>
-        <tr class="header">
-            <td colspan="2"><b>Senior Audit Form</b></td>
+        <tr class="center">
+            <td colspan="3"><b>Senior Audit Form</b></td>
         </tr>
         <tr class="header">
             <td><a href="files/senior_audit.pdf" target="_blank">View</a></td>
-            <td><a href="files/senior_audit.pdf" download="files/senior_audit.pdf" class="float-right">Download</a></td>
+            <td colspan="2"><a href="files/senior_audit.pdf" download="files/senior_audit.pdf" class="float-right">Download</a></td>
         </tr>
-        <tr class="header">
-            <td colspan="2"><b>Recommendations</b></td>
+        <tr class="center">
+            <td colspan="3"><b>Recommendations</b></td>
+        </tr>
+        <tr class="recs">
+            <td><b>Completed</b></td>
+            <td><b>Currently Taken</b></td>
+            <td><b>Recommended</b></td>
         </tr>
         <tr>
-            <td>List of Classes</td>
+            <td class="recs">
+                <ul>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                </ul>
+            </td>
+
+            <td class="recs">
+                <ul>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                    <li>Yo</li>
+                </ul>
+            </td>
+
+            <td class="recs">
+                <ul>
+                    <li>Yo</li>
+                </ul>
+            </td>
         </tr>
-        <!-- <tr class="header">
-             <td colspan="2"><b>Pre-Requisitions</b></td>
-         </tr> -->
         <tr class="header">
-            <td colspan="2"><img src="files/pre-req.png" alt="Pre Req" class="center"/></td>
+            <td colspan="3"><img src="files/pre-req.png" alt="Pre Req" class="center"/></td>
         </tr>
         <tr class="header">
-            <td colspan="2"><a href="curriculum.html" target="_blank">Click Here To View Interactive Curriculum Guide</a></td>
+            <td colspan="3"><a href="curriculum.html" target="_blank">Click Here To View Interactive Curriculum Guide</a></td>
         </tr>
         <tr class="header">
-            <td colspan="2"><a href="https://www.ncat.edu/" target="_blank">Browse Here For More Info</a></td>
+            <td colspan="3"><a href="https://www.ncat.edu/" target="_blank">Browse Here For More Info</a></td>
         </tr>
         </tbody>
     </table>
 </div>
 <div class="table-info">
-    <form name="form" action="/index.jsp" method="post">
+    <form name="form" action="index.jsp" method="post">
 
         <input type="submit" value="SIGNOUT">
 

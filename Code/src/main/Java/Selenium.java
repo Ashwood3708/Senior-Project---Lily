@@ -40,7 +40,10 @@ public class Selenium {
             //System.out.print(courseRecommendations.toString());
             display.add(s[0]);
             display.add(s[1]);
-            display.add(courseRecommendations.takeThese());
+            display.add(courseRecommendations.getTakenClasses());
+            display.add(courseRecommendations.getCurrentClasses());
+            display.add(courseRecommendations.getFinalList());
+
 
             return display;
         }catch (FileNotFoundException e){

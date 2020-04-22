@@ -50,15 +50,13 @@ public class loginServlet extends HttpServlet{
         if(aggieAccessLogin.equals(true)){
             usersHomePageData = selenium.checkTranscript();
             if(usersHomePageData != null) {
-                String[] getList =  usersHomePageData.get(2).split(",");
-                String displayList = "<ul>";
-               /* for(int i = 0; i < getList.length; i++){
-                    displayList += getList[i] + "\n";
+                String x = "";
+                if(usersHomePageData.get(4).equals("<ul></ul>")){
+                    x = "Looks like you're graduating soon!";
+                }else{
+                    x = usersHomePageData.get(4);
                 }
-                for(String s: getList){
-                    displayList += "<li>" + s + "</li>";
-                }*/
-                displayList += "</ul";
+
                 // html code that creates the head of the home page (can also see this code in home.html)
                 String head = "<!DOCTYPE html>\n" +
                         "<html lang='en'>\n" +
@@ -92,47 +90,51 @@ public class loginServlet extends HttpServlet{
                         "        <tbody>\n" +
                         "        <tr class='header'>\n" +
                         "            <td><b>Cumulative GPA</b></td>\n" +
-                        "            <td><b>Major GPA</b></td>\n" +
+                        "            <td colspan='2'><b>Major GPA</b></td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
-                        "            <td>" + usersHomePageData.get(0) + "</td>\n" + // Gets the Overall GPA to display in table
-                        "            <td>" + usersHomePageData.get(1) + "</td>\n" + // Gets the Major GPA to display in table
+                        "            <td>" + usersHomePageData.get(0) + "</td>\n" +
+                        "            <td colspan='2'>" + usersHomePageData.get(1) + "</td>\n" +
                         "        </tr>\n" +
-                        "        <tr class='header'>\n" +
-                        "            <td colspan='2'><b>Senior Audit Form</b></td>\n" +
+                        "        <tr class='center'>\n" +
+                        "            <td colspan='3'><b>Senior Audit Form</b></td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
                         "            <td><a href='files/senior_audit.pdf' target='_blank'>View</a></td>\n" +
-                        "            <td><a href='files/senior_audit.pdf' download='files/senior_audit.pdf' class='float-right'>Download</a></td>\n" +
+                        "            <td colspan='2'><a href='files/senior_audit.pdf' download='files/senior_audit.pdf' class='float-right'>Download</a></td>\n" +
                         "        </tr>\n" +
-                        "        <tr class='header'>\n" +
-                        "            <td colspan='2'><b>Recommendations</b></td>\n" +
+                        "        <tr class='center'>\n" +
+                        "            <td colspan='3'><b>Recommendations</b></td>\n" +
+                        "        </tr>\n" +
+                        "        <tr class='recs'>\n" +
+                        "            <td><b>Completed</b></td>\n" +
+                        "            <td><b>Currently Taken</b></td>\n" +
+                        "            <td><b>Recommended</b></td>\n" +
                         "        </tr>\n" +
                         "        <tr>\n" +
-                        "            <td>" + usersHomePageData.get(2) + "</td>\n" + // Gets the Class Recommendations to display in table
-                        "        </tr>\n" +
-                        "       <!-- <tr class='header'>\n" +
-                        "            <td colspan='2'><b>Pre-Requisitions</b></td>\n" +
-                        "        </tr> -->\n" +
-                        "        <tr class='header'>\n" +
-                        "            <td colspan='2'><img src='files/pre-req.png' alt='Pre Req' class='center'/></object></td>\n" +
+                        "            <td class='recs'>\n" + usersHomePageData.get(2) + "</td>\n" +
+                        "            <td class='recs'>\n" + usersHomePageData.get(3) + "</td>\n" +
+                        "            <td class='recs'>\n" + x + "</td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
-                        "            <td colspan='2'><a href='curriculum.html' target='_blank'>Click Here To View Interactive Curriculum Guide</a></td>\n" +
+                        "            <td colspan='3'><img src='files/pre-req.png' alt='Pre Req' class='center'/></td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
-                        "            <td colspan='2'><a href='https://www.ncat.edu/' target='_blank'>Browse Here For More Info</a></td>\n" +
+                        "            <td colspan='3'><a href='curriculum.html' target='_blank'>Click Here To View Interactive Curriculum Guide</a></td>\n" +
+                        "        </tr>\n" +
+                        "        <tr class='header'>\n" +
+                        "            <td colspan='3'><a href='https://www.ncat.edu/' target='_blank'>Browse Here For More Info</a></td>\n" +
                         "        </tr>\n" +
                         "        </tbody>\n" +
                         "    </table>\n" +
                         "</div>\n" +
-                        "    <div class='table-info'>\n" +
-                        "        <form name='form' action='index.jsp' method='post'>\n" +
+                        "<div class='table-info'>\n" +
+                        "    <form name='form' action='index.jsp' method='post'>\n" +
                         "\n" +
-                        "            <input type='submit' value='SIGNOUT'>\n" +
+                        "        <input type='submit' value='SIGNOUT'>\n" +
                         "\n" +
-                        "        </form>\n" +
-                        "    </div>\n" +
+                        "    </form>\n" +
+                        "</div>\n" +
                         "</body>\n" +
                         "</html>";
                 // Writes html code to display on home page for project Lily

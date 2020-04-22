@@ -2,6 +2,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+/**
+ * What was changed:
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * getTakenClasses() -added
+ * getCurrentClasses() -added
+ * getFinalList() -added
+ * getRequiredClasses() -added
+ * new student var -added
+ * takeThese() -added
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * constructor  -edited
+ * creatFinalList() -edited
+ * toString() -edited
+ * globalElectives() -edited
+ *
+ */
+
 public class CourseRecommendations {
 
     private HashSet<String> takenClassNames;
@@ -18,13 +35,16 @@ public class CourseRecommendations {
     private ArrayList<String> globalElectives;
     private HashSet<classRequirements> classestoTake;
     private ArrayList<String> finalList;
-    private String elevtivesResponse ="";
+    private String elevtivesResponse = "";
+    private Student student;
     private int counter;
     private String k = System.lineSeparator();
 
     public CourseRecommendations(Student s) {
         s.addNames();
+        student = s;
         takenClassNames = s.getNames();
+        takenClassNames.addAll(s.getCurrentClasses());
         requiredClasses = new HashSet<>();
         classToTakeNames = new HashSet<>();
         classEquivalents = new HashMap<>();
@@ -50,7 +70,7 @@ public class CourseRecommendations {
         checkElectives();
     }
 
-    private void checkElectives(){
+    private void checkElectives() {
         elevtivesResponse = ""
                 + compElectives()
                 + scienceElectives()
@@ -62,7 +82,7 @@ public class CourseRecommendations {
                 + socialSciElectives();
     }
 
-    private String createFinalList() {
+    private void createFinalList() {
         // classestoTake has required classes not yet taken
 
         for (classRequirements a : classestoTake) {
@@ -70,7 +90,7 @@ public class CourseRecommendations {
                 finalList.add(a.name);
             }
         }
-        return "Recommended Classes List: " + k + finalList + k;
+        Collections.sort(finalList);
     }
 
     private boolean checkPrereqs(classRequirements c) {
@@ -123,7 +143,7 @@ public class CourseRecommendations {
         }
         if (!takenClassNames.contains("CHEM 106")) {
             sciElectives.remove("chem 107");
-        } else if (!takenClassNames.contains("PHYS 241") ) {
+        } else if (!takenClassNames.contains("PHYS 241")) {
             sciElectives.remove("phys 242");
         }
         if (eCount < 1) {
@@ -150,7 +170,7 @@ public class CourseRecommendations {
             }
         }
         finalList.add("Math Electives needed: " + Math.max(0, eCount));
-        return "Math Electives needed: " + Math.max(0, eCount)+ k + k;
+        return "Math Electives needed: " + Math.max(0, eCount) + k + k;
 
 
     }
@@ -191,29 +211,26 @@ public class CourseRecommendations {
         return "Business Electives needed: " + Math.max(0, eCount) + k + k;
     }
 
-    //not filled in
     public String socialSciElectives() {
-        ArrayList<String> electives = new ArrayList(Arrays.asList("bued 279","econ 200", "econ 201","fcs 135","fcs 181",
-                "fcs 260","hist 103","hist 104","hist 105","hist 106","hist 107","hist 130","hist 206","hist 207","hist 216",
-                "hist 231","jomc 240","poli 110","psyc 101","soci 100","soci 200","ssfm 226"));
+        ArrayList<String> electives = new ArrayList(Arrays.asList("bued 279", "econ 200", "econ 201", "fcs 135", "fcs 181",
+                "fcs 260", "hist 103", "hist 104", "hist 105", "hist 106", "hist 107", "hist 130", "hist 206", "hist 207", "hist 216",
+                "hist 231", "jomc 240", "poli 110", "psyc 101", "soci 100", "soci 200", "ssfm 226"));
         socialElectives.addAll(electives);
-        int eCount = 1;
+        int counter = 0;
         for (String name : electives) {
             name = name.toUpperCase();
             if (takenClassNames.contains(name)) {
                 socialElectives.remove(name.toLowerCase());
-                eCount--;
-            }
-            if (eCount < 1) {
                 return "";
             }
         }
-        finalList.add("Social/ behavior Science Electives needed: " + Math.max(0, eCount));
-        return "Social/ behavior Science Electives needed: " + Math.max(0, eCount) + k + k;
+
+        finalList.add("Social/ behavior Science Electives needed: " + 1);
+        return "Social/ behavior Science Electives needed: " + 1 + k + k;
     }
 
     public String histElectives() {
-        ArrayList<String> electives = new ArrayList(Arrays.asList("engl 333","engl 334","hist 103","hist 106", "hist 107","libs 202", "musi 220"));
+        ArrayList<String> electives = new ArrayList(Arrays.asList("engl 333", "engl 334", "hist 103", "hist 106", "hist 107", "libs 202", "musi 220"));
         histElectives.addAll(electives);
         int eCount = 1;
         for (String name : electives) {
@@ -231,7 +248,7 @@ public class CourseRecommendations {
     }
 
     public String globalElectives() {
-        ArrayList<String> electives = new ArrayList(Arrays.asList("hist 130","hist 206", "hist 207", "hist 216","hist hist 231","mgmt 221","phil 103","phil 201" ));
+        ArrayList<String> electives = new ArrayList(Arrays.asList("hist 130", "hist 206", "hist 207", "hist 216", "hist 231", "mgmt 221", "phil 103", "phil 201"));
         globalElectives.addAll(electives);
         int eCount = 1;
         for (String name : electives) {
@@ -239,8 +256,6 @@ public class CourseRecommendations {
             if (takenClassNames.contains(name)) {
                 globalElectives.remove(name.toLowerCase());
                 eCount--;
-            }
-            if (eCount < 1) {
                 return "";
             }
         }
@@ -330,18 +345,69 @@ public class CourseRecommendations {
 
     public String toString() {
         String k = System.lineSeparator();
-        String key = "Required classes to take: " + classestoTake.size() + k;
-        for (classRequirements clss : classestoTake) {
-            key += clss.name + k;
-        }
-        return key + k + elevtivesResponse + "Recommended Classes List: " + k + finalList + k;
+        String key = "major: " + student.getMajor() + "\n" + "Required classes to take: " + classestoTake.size() + k;
+        return key + getRequiredClasses() + k + elevtivesResponse + "\n"
+                + "Taken Classes: \n" + getTakenClasses() + "\n"
+                + "Current Classes: \n" + getCurrentClasses() + "\n"
+                + "Recommended Classes List: \n" + getFinalList() + "\n";
     }
 
-    public String takeThese() {
-        String key = "<ul>";
-        for (String clss : finalList) {
-            key += "<li>" + clss + "</li>";
+    public String getRequiredClasses() {
+        String list = "";
+        ArrayList<String> names = new ArrayList<>();
+        for (classRequirements clss : classestoTake) {
+            names.add(clss.name);
         }
-        return key + "</ul>";
+        Collections.sort(names);
+        for (String clss : names) {
+            list += clss + "\n";
+        }
+        return list;
+    }
+
+    /******
+     *
+     * @return k, a string of recommended classes
+     */
+    public String getFinalList() {
+        String k = "<ul>";
+        for (String a : finalList) {
+            k += "<li>" + a + "</li>";
+        }
+        return k + "</ul>";
+    }
+
+    /*****
+     *
+     * @return all, a string of classes already taken
+     */
+    public String getTakenClasses() {
+        String all = "<ul>";
+        HashSet<String> takenClasses = takenClassNames;
+        for (String name : student.getCurrentClasses()) {
+            takenClasses.remove(name);
+        }
+        takenClasses.remove("NONE");
+        Object[] c = takenClasses.toArray();
+        Arrays.sort(c);
+        for (Object f : c) {
+            all += "<li>" + f + "</li>";
+        }
+        return all + "</ul>";
+    }
+
+    /*****
+     *
+     * @return currClasses, a string of currently taken classes
+     */
+    public String getCurrentClasses() {
+        String currClasses = "<ul>";
+        HashSet<String> r = student.getCurrentClasses();
+        Object[] c = r.toArray();
+        Arrays.sort(c);
+        for (Object f : c) {
+            currClasses += "<li>" + f + "</li>";
+        }
+        return currClasses + "</ul>";
     }
 }

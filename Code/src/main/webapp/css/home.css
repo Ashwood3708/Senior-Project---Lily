@@ -24,6 +24,10 @@ body{
 }
 .header{
     text-align: center;
+    width: 15%;
+}
+.center{
+    text-align: center;
 }
 
 .float-left{
@@ -33,12 +37,17 @@ body{
 .table-info{
     font-size: 1.5em;
     color: #ffffff;
-    width: 35%;
+    width: 30%;
     margin: 3em auto;
     background: #002D74;
     background-size: cover;
     border-spacing: 0;
     font-family: 'Roboto', SansSerif, sans-serif;
+}
+
+.recs{
+    vertical-align: top;
+    width: 10%;
 }
 
 input[type="submit"]{
