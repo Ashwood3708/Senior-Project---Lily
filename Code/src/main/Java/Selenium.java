@@ -33,19 +33,20 @@ public class Selenium {
         ArrayList<String> display = new ArrayList<>();
         pdfParser g = new pdfParser();
         try {
-            g.readTxt("transcript.txt");
-            // splits string by white space (subject to change when list gets added)
-            String[] s = g.getUserInfo().split(" ");
-            courseRecommendations = new CourseRecommendations(g.getPerson());
-            //System.out.print(courseRecommendations.toString());
-            display.add(s[0]);
-            display.add(s[1]);
-            display.add(courseRecommendations.getTakenClasses());
-            display.add(courseRecommendations.getCurrentClasses());
-            display.add(courseRecommendations.getFinalList());
-
-
-            return display;
+            if(g.readTxt("transcript.txt")){
+                // splits string by white space (subject to change when list gets added)
+                String[] s = g.getUserInfo().split(" ");
+                courseRecommendations = new CourseRecommendations(g.getPerson());
+                //System.out.print(courseRecommendations.toString());
+                display.add(s[0]);
+                display.add(s[1]);
+                display.add(courseRecommendations.getTakenClasses());
+                display.add(courseRecommendations.getCurrentClasses());
+                display.add(courseRecommendations.getFinalList());
+                return display;
+            }else{
+                return null;
+            }
         }catch (FileNotFoundException e){
             System.out.println("file not found");
             //System.exit(-1);

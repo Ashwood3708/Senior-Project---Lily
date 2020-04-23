@@ -32,7 +32,7 @@ public class pdfParser {
         fillMajorClasses();
     }
 
-    public void readTxt(String text) throws FileNotFoundException {
+    public Boolean readTxt(String text) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(text));
         String line;
         while(scan.hasNext()) {
@@ -50,7 +50,9 @@ public class pdfParser {
                         String creditHours = scan.nextLine().trim();
                         String QPoints = scan.nextLine().trim();
                         String items[] = line.split(" ");
-                        fillClassT(items, creditHours, QPoints);
+                        if(fillClassT(items, creditHours, QPoints) != true){
+                            return false;
+                        }
                         numOfClasses++;
                         line = scan.nextLine().trim();
 
@@ -101,7 +103,9 @@ public class pdfParser {
                             String creditHours = scan.nextLine().trim();
                             String QPoints = scan.nextLine().trim();
                             String items[] = line.split(" ");
-                            fillClass(items, creditHours, QPoints);
+                            if(fillClass(items, creditHours, QPoints) != true){
+                                return false;
+                            }
                             numOfClasses++;
                         }
                     }
@@ -118,15 +122,16 @@ public class pdfParser {
                         String creditHours = scan.nextLine().trim();
                         String QPoints = "0.0";
                         String items[] = line.split(" ");
-                        fillCurrentClasses(items, creditHours, QPoints);
+                        if(fillCurrentClasses(items, creditHours, QPoints) != true){
+                            return false;
+                        }
                         numOfClasses++;
                         line = scan.nextLine();
                     }
                 }
-
-
             }
         }
+        return true;
     }
 
     @Override
@@ -144,7 +149,7 @@ public class pdfParser {
         return m;
     }
 
-    public void fillClass( String[] items, String creditHours, String QPoints){
+    public Boolean fillClass( String[] items, String creditHours, String QPoints){
         try{
             int classNameStartPosition = 3;
             String concat = "";
@@ -167,12 +172,14 @@ public class pdfParser {
             temp.isRequired = reqClasses.contains(items[0]+items[1]);
             temp.isTransferCredit = temp.grade.contains("T");
             person.getList().add(temp);
+            return true;
         }catch(Exception e){
             System.out.println("couldn't fill class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
+            return false;
         }
     }
 
-    public void fillClassT( String[] items, String creditHours, String QPoints){
+    public Boolean fillClassT( String[] items, String creditHours, String QPoints){
         try{
             int classNameStartPosition = 2;
             String concat = "";
@@ -195,13 +202,15 @@ public class pdfParser {
             temp.isRequired = reqClasses.contains(items[0]+items[1]);
             temp.isTransferCredit = temp.grade.contains("T");
             person.getList().add(temp);
+            return true;
         }catch(Exception e){
             System.out.println("couldn't fill transfer class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
-            System.exit(-1);
+            //System.exit(-1);
+            return false;
         }
     }
 
-    public void fillCurrentClasses(String[] items, String creditHours, String QPoints){
+    public Boolean fillCurrentClasses(String[] items, String creditHours, String QPoints){
         try{
             String concat = "";
             //Fill in class object
@@ -211,9 +220,11 @@ public class pdfParser {
             temp.level = items[2].trim();
             temp.setName();
             person.getCurrentClasses().add(temp.name);
+            return true;
         }catch(Exception e){
             System.out.println("couldn't fill-current-class: "+ "\n string: "+ items[0]+" "+items[1] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
-            System.exit(-5);
+            //System.exit(-5);
+            return false;
         }
     }
 
