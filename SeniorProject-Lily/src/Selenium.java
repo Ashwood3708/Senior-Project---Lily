@@ -21,7 +21,6 @@ public class Selenium {
             courseRecommendations = new CourseRecommendations(g.getPerson());
         } catch (FileNotFoundException e) {
             System.out.println(" transcript.txt not found");
-            //System.exit(-1);
         }
 
     }
@@ -71,10 +70,10 @@ public class Selenium {
         } catch (Exception e) {
             System.out.println("incorrect login");
             driver.quit();
-            //System.exit(-1);
         }
     }
 
+    //save transcript to transcript.txt
     private static void writeToText(String buffer) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("transcript.txt"));
         writer.write(buffer);

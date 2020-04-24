@@ -20,7 +20,7 @@ public class pdfParser {
     private Student person;
     private int numOfClasses;
 
-    public pdfParser(){
+    public pdfParser() {
         electives = new HashSet();
         gradesList = new HashSet();
         reqClasses = new HashSet();
@@ -31,189 +31,147 @@ public class pdfParser {
         fillGradesList();
         fillMajorClasses();
     }
-    
+
     public void readTxt(String text) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(text));
         String line;
-        while(scan.hasNext()) {
+        while (scan.hasNext()) {
             line = scan.nextLine().trim();
 
+            //If statement helps parse faster
             if (line.contains("COURSES IN PROGRESS ") || line.contains("TRANSFER CREDIT ") || line.contains("Major and Department:") || line.equals("Overall:") || line.substring(line.length() - 1).equals("R") && line.contains("Subject")) {
 
-            //grabs transfer credits
-            if (line.contains("TRANSFER CREDIT ACCEPTED BY IN")) {
-                while (!line.contains("Subject")) {
-                    line = scan.nextLine();
-                }
-                line = scan.nextLine().trim();
-                while (!line.contains("Attempt Hours")) {
-                    String creditHours = scan.nextLine().trim();
-                    String QPoints = scan.nextLine().trim();
-                    String items[] = line.split(" ");
-                    fillClassT(items, creditHours, QPoints);
-                    numOfClasses++;
-                    line = scan.nextLine().trim();
-
-                }
-                while (!line.contains("INSTITUTION CREDIT")) {
-                    line = scan.nextLine();
-                }
-                person.setNumOfClasses(numOfClasses);
-                person.setMajorGPA(getMajorGPA());
-            }
-
-            //grabs major
-            if (line.contains("Major and Department:")) {
-                String[] set = line.split(" ");
-                String yet = "";
-                for (int i = 3; i < set.length; i++) {
-                    yet += set[i] + " ";
-                    if (yet.contains(",")) {
-                        yet = yet.substring(0, yet.length() - 2);
-                        break;
+                //grabs major
+                if (line.contains("Major and Department:")) {
+                    String[] set = line.split(" ");
+                    String yet = "";
+                    for (int i = 3; i < set.length; i++) {
+                        yet += set[i] + " ";
+                        if (yet.contains(",")) {
+                            yet = yet.substring(0, yet.length() - 2);
+                            break;
+                        }
                     }
+
+                    person.setMajor(yet.trim());
                 }
 
-                person.setMajor(yet.trim());
-            }
+                //grabs gpa
+                if (line.equals("Overall:")) {
+                    scan.nextLine();
+                    scan.nextLine();
+                    scan.nextLine();
+                    scan.nextLine();
+                    scan.nextLine();
+                    line = scan.nextLine();
+                    person.setTotalGPA(line.trim());
+                }
 
-            //grabs gpa
-            if (line.equals("Overall:")) {
-                scan.nextLine();
-                scan.nextLine();
-                scan.nextLine();
-                scan.nextLine();
-                scan.nextLine();
-                line = scan.nextLine();
-                person.setTotalGPA(line.trim());
-            }
+                //grab all classses
+                if (line.substring(line.length() - 1).equals("R") && line.contains("Subject")) { //indicates when classes appear
+                    //ends with: Term Totals (Undergraduate)
+                    while (!line.contains("Term Totals")) {
+                        line = scan.nextLine().trim();
+                        if (line.contains("Term Totals (Undergraduate)")) {
+                            break;
+                        }
+                        if (line.length() > 3) {
 
-            //loop to grab all classses
-            if (line.substring(line.length() - 1).equals("R") && line.contains("Subject")) { //indicates when classes appear
-                //ends with: Term Totals (Undergraduate)
-                while (!line.contains("Term Totals")) {
-                    line = scan.nextLine().trim();
-                    if (line.contains("Term Totals (Undergraduate)")) {
-                        break;
+                            String creditHours = scan.nextLine().trim();
+                            String QPoints = scan.nextLine().trim();
+                            String items[] = line.split(" ");
+                            //fillClass(items, creditHours, QPoints);
+                            fillClasses(items, creditHours, QPoints, 3, items[2].trim());
+                            numOfClasses++;
+                        }
                     }
-                    if (line.length() > 3) {
-
-                    String creditHours = scan.nextLine().trim();
-                    String QPoints = scan.nextLine().trim();
-                    String items[] = line.split(" ");
-                    fillClass(items, creditHours, QPoints);
-                    numOfClasses++;
+                    person.setNumOfClasses(numOfClasses);
+                    person.setMajorGPA(getMajorGPA());
                 }
-                }
-                person.setNumOfClasses(numOfClasses);
-                person.setMajorGPA(getMajorGPA());
-            }
 
-            //grabs current classes
-                if (line.contains("COURSES IN PROGRESS ") && line.contains("-Top-")){
-                    line = scan.nextLine();
-                    line = scan.nextLine();
-                    line = scan.nextLine();
-                    while(!line.contains("Unofficial Transcript")){
+                //grabs transfer credits
+                if (line.contains("TRANSFER CREDIT ACCEPTED BY IN")) {
+                    while (!line.contains("Subject")) {
+                        line = scan.nextLine();
+                    }
+                    line = scan.nextLine().trim();
+                    while (!line.contains("Attempt Hours")) {
                         String creditHours = scan.nextLine().trim();
-                        String QPoints = "0.0";
+                        String QPoints = scan.nextLine().trim();
                         String items[] = line.split(" ");
-                        fillCurrentClasses(items, creditHours, QPoints);
+                        fillClasses(items, creditHours, QPoints, 2,"T");
+                        numOfClasses++;
+                        line = scan.nextLine().trim();
+
+                    }
+                    while (!line.contains("INSTITUTION CREDIT")) {
+                        line = scan.nextLine();
+                    }
+                    person.setNumOfClasses(numOfClasses);
+                    person.setMajorGPA(getMajorGPA());
+                }
+
+                //grabs current classes
+                if (line.contains("COURSES IN PROGRESS ") && line.contains("-Top-")) {
+                    line = scan.nextLine();
+                    line = scan.nextLine();
+                    line = scan.nextLine();
+                    while (!line.contains("Unofficial Transcript")) {
+                        scan.nextLine().trim();
+                        String items[] = line.split(" ");
+                        String subject= items[0].trim();
+                        String course = items[1].trim();
+                        person.getCurrentClasses().add(subject+" "+course);
                         numOfClasses++;
                         line = scan.nextLine();
                     }
                 }
 
 
-        }
+            }
         }
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String k = System.lineSeparator();
-        String m = "major is: " + person.getMajor() +k;
-        m+= "totalGPA is: " + person.getTotalGPA() +k;
-        m+= "majorGPA is: " + person.getMajorGPA() +k;
-        m+= "totalClasses is: " + person.getNumOfClasses() +k;
-        if(!person.getMajor().equals("Computer Science"))return m + "This project only supports Computer Scientist"+k;
-        m+= "class List:" +k;
-        for(Class f: person.getList()){
-            m+= f.toString() +k;
+        String m = "major is: " + person.getMajor() + k;
+        m += "totalGPA is: " + person.getTotalGPA() + k;
+        m += "majorGPA is: " + person.getMajorGPA() + k;
+        m += "totalClasses is: " + person.getNumOfClasses() + k;
+        if (!person.getMajor().equals("Computer Science"))
+            return m + "This project only supports Computer Scientist" + k;
+        m += "class List:" + k;
+        for (Class f : person.getList()) {
+            m += f.toString() + k;
         }
         return m;
     }
 
-    public void fillClass( String[] items, String creditHours, String QPoints){
-        try{
-        int classNameStartPosition = 3;
-        String concat = "";
-        //Fill in class object
-        Class temp = new Class();
-        temp.subject = items[0].trim();
-        temp.courseNum = items[1].trim();
-        temp.level = items[2].trim();
-        temp.setName();
-        while (!gradesList.contains(items[classNameStartPosition])) {
-            concat += items[classNameStartPosition].trim()+" ";
-            classNameStartPosition++;
-        }
-        temp.title = concat.trim();
-        temp.grade = items[items.length-1].trim();
-        temp.creditHours= Double.parseDouble(creditHours);
-        temp.finalCredit= Double.parseDouble(QPoints);
-        temp.isMajorClass = majorClasses.contains(items[0]+items[1]);
-        temp.isCompElective = electives.contains(items[0]+items[1]); 
-        temp.isRequired = reqClasses.contains(items[0]+items[1]);
-        temp.isTransferCredit = temp.grade.contains("T");
-        person.getList().add(temp);
-        }catch(Exception e){
-            System.out.println("couldn't fill class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
-        }
-    }
-
-    public void fillClassT( String[] items, String creditHours, String QPoints){
-        try{
-            int classNameStartPosition = 2;
+    //generate class objects
+    public void fillClasses(String[] items, String creditHours, String QPoints, int point, String level) {
+        try {
+            int classNameStartPosition = point;
             String concat = "";
             //Fill in class object
             Class temp = new Class();
             temp.subject = items[0].trim();
             temp.courseNum = items[1].trim();
-            temp.level = "T";
+            temp.level = level;
             temp.setName();
             while (!gradesList.contains(items[classNameStartPosition])) {
-                concat += items[classNameStartPosition].trim()+" ";
+                concat += items[classNameStartPosition].trim() + " ";
                 classNameStartPosition++;
             }
             temp.title = concat.trim();
-            temp.grade = items[items.length-1].trim();
-            temp.creditHours= Double.parseDouble(creditHours);
-            temp.finalCredit= Double.parseDouble(QPoints);
-            temp.isMajorClass = majorClasses.contains(items[0]+items[1]);
-            temp.isCompElective = electives.contains(items[0]+items[1]);
-            temp.isRequired = reqClasses.contains(items[0]+items[1]);
+            temp.grade = items[items.length - 1].trim();
+            temp.creditHours = Double.parseDouble(creditHours);
+            temp.finalCredit = Double.parseDouble(QPoints);
+            temp.isMajorClass = majorClasses.contains(items[0] + items[1]);
             temp.isTransferCredit = temp.grade.contains("T");
             person.getList().add(temp);
-        }catch(Exception e){
-            System.out.println("couldn't fill transfer class: "+ "\n string: "+ items[0] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
-            System.exit(-1);
-        }
-    }
-
-    public void fillCurrentClasses(String[] items, String creditHours, String QPoints){
-        try{
-            String concat = "";
-            //Fill in class object
-            Class temp = new Class();
-            temp.subject = items[0].trim();
-            temp.courseNum = items[1].trim();
-            temp.level = items[2].trim();
-            temp.setName();
-            person.getCurrentClasses().add(temp.name);
-        }catch(Exception e){
-            System.out.println("couldn't fill-current-class: "+ "\n string: "+ items[0]+" "+items[1] +"\n credit hours: " +creditHours +"\n quality points: "+ QPoints);
-            System.exit(-5);
+        } catch (Exception e) {
+            System.out.println("couldn't fill class: " + "\n string: " + items[0] + "\n credit hours: " + creditHours + "\n quality points: " + QPoints);
         }
     }
 
@@ -254,7 +212,7 @@ public class pdfParser {
         gradesList.add("TS");
     }
 
-    public void fillElectives(){
+    public void fillElectives() {
         electives.add("COMP320");
         electives.add("COMP321");
         electives.add("COMP323");
@@ -266,9 +224,10 @@ public class pdfParser {
         electives.add("COMP421");
         electives.add("COMP440");
         electives.add("");
-        
+
     }
 
+    //create list of major classes to generate major gpa
     public void fillMajorClasses() {
         majorClasses.add("GEEN111");
         majorClasses.add("COMP121");
@@ -292,19 +251,19 @@ public class pdfParser {
         majorClasses.add("COMP496");
     }
 
-    public double getMajorGPA(){
-        ArrayList <Class> list = person.getList();
-        double Qpoints=0.0, creditHours =0.0;
-        for (Class c:list) {
-            if(c.isMajorClass){
-                Qpoints+= c.finalCredit;
-                creditHours+=c.creditHours;
+    public double getMajorGPA() {
+        ArrayList<Class> list = person.getList();
+        double Qpoints = 0.0, creditHours = 0.0;
+        for (Class c : list) {
+            if (c.isMajorClass) {
+                Qpoints += c.finalCredit;
+                creditHours += c.creditHours;
             }
         }
-        return (Qpoints/creditHours);
+        return (Qpoints / creditHours);
     }
 
-    public Student getPerson(){
+    public Student getPerson() {
         return person;
     }
 
@@ -313,7 +272,7 @@ public class pdfParser {
      * Selenium.java to be updated on front end.
      * @return
      */
-    public String getUserInfo(){
+    public String getUserInfo() {
         return person.getTotalGPA() + " " + person.getMajorGPA();
     }
 }

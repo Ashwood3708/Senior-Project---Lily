@@ -2,23 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-/**
- * What was changed:
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * getTakenClasses() -added
- * getCurrentClasses() -added
- * getFinalList() -added
- * getRequiredClasses() -added
- * new student var -added
- * takeThese() -added
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * constructor  -edited
- * creatFinalList() -edited
- * toString() -edited
- * globalElectives() -edited
- *
- */
-
 public class CourseRecommendations {
 
     private HashSet<String> takenClassNames;
@@ -38,7 +21,7 @@ public class CourseRecommendations {
     private String elevtivesResponse = "";
     private Student student;
     private int counter;
-    private String k = System.lineSeparator();
+    private String k = "\n";
 
     public CourseRecommendations(Student s) {
         s.addNames();
@@ -82,19 +65,19 @@ public class CourseRecommendations {
                 + socialSciElectives();
     }
 
+    //create recommendations list
     private void createFinalList() {
         // classestoTake has required classes not yet taken
-
         for (classRequirements a : classestoTake) {
-            if (checkPrereqs(a)) {
+            if (checkPreReqs(a)) {
                 finalList.add(a.name);
             }
         }
         Collections.sort(finalList);
     }
 
-    private boolean checkPrereqs(classRequirements c) {
-        for (String name : c.list) {
+    private boolean checkPreReqs(classRequirements c) {
+        for (String name : c.preRequisites) {
             name = name.toUpperCase();
             if (classToTakeNames.contains(name)) {
                 return false;
@@ -102,7 +85,6 @@ public class CourseRecommendations {
         }
         return true;
     }
-
 
     //check electives
     public String compElectives() {
@@ -263,10 +245,8 @@ public class CourseRecommendations {
         return "Global Awareness Electives needed: " + Math.max(0, eCount) + k + k;
     }
 
-    //fill class info
+    //loads required classes into objs with all pre-recs
     private void fillClassList() {
-        //loads required classes into obj with all pre-recs
-
         try {
             Scanner file = new Scanner(new File("requiredClassList.txt"));
             String[] line;
@@ -275,18 +255,18 @@ public class CourseRecommendations {
                 classRequirements obj = new classRequirements();
                 obj.name = line[0].toUpperCase().trim();
                 for (int i = 1; i < line.length; i++) {
-                    obj.list.add(line[i].toUpperCase().trim());
+                    obj.preRequisites.add(line[i].toUpperCase().trim());
                 }
-                obj.otherNames.addAll(classEquivalents.getOrDefault(obj.name, new HashSet<>()));
+                obj.classEquivalents.addAll(classEquivalents.getOrDefault(obj.name, new HashSet<>()));
                 requiredClasses.add(obj);
                 counter++;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("");
-            e.printStackTrace();
+            System.out.println("error in fillClassList()");
         }
     }
 
+    //fill each classes class Equivalents list
     private void fillClassEquivalents() {
         //text has classes that were renamed and transfer credits that transfer over
         try {
@@ -308,6 +288,7 @@ public class CourseRecommendations {
         }
     }
 
+    //parse taken classes against required classes
     private void fillClassesToTake() {
         for (classRequirements one : requiredClasses) {
             if (!takenClassNames.contains(one.name)) {
@@ -321,8 +302,8 @@ public class CourseRecommendations {
             HashSet<classRequirements> listTemp = new HashSet<>();
             listTemp.addAll(classestoTake);
             for (classRequirements one : listTemp) {
-                if (one.otherNames != null) {
-                    HashSet temp = one.otherNames;
+                if (one.classEquivalents != null) {
+                    HashSet temp = one.classEquivalents;
                     temp.retainAll(takenClassNames);
                     if (temp.size() > 0) {
                         classestoTake.remove(one);
@@ -335,14 +316,16 @@ public class CourseRecommendations {
         }
     }
 
+    //class holds prerequisites and classEquivalents
     private class classRequirements {
         String name;
-        HashSet<String> list = new HashSet<>();
-        HashSet<String> otherNames = new HashSet<>();
+        HashSet<String> preRequisites = new HashSet<>();
+        HashSet<String> classEquivalents = new HashSet<>();
 
 
     }
 
+    //Return methods
     public String toString() {
         String k = System.lineSeparator();
         String key ="major: "+student.getMajor() +"\n" + "Required classes to take: " + classestoTake.size() + k;

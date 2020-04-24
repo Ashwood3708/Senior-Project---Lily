@@ -1,6 +1,6 @@
 To run Selenium here are specifications:
 
-1. download chromedriver.exe
-2. install selenium jar file
+1. import libs folder- contains needed jar files
+
 
 note: these things are in the project folder
