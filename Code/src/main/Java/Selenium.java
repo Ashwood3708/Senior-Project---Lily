@@ -23,8 +23,6 @@ public class Selenium {
     private int finalTime = 0;
 
 
-    //still need error case
-
     /**
      * @return an array list of items to be updated on Lily's home page
      * items will only be calculated and returned if the transcript file was able to be parsed
@@ -40,6 +38,7 @@ public class Selenium {
                 //System.out.print(courseRecommendations.toString());
                 display.add(s[0]);
                 display.add(s[1]);
+                // gets the current classes, previously taken classes and recommended classes.
                 display.add(courseRecommendations.getTakenClasses());
                 display.add(courseRecommendations.getCurrentClasses());
                 display.add(courseRecommendations.getFinalList());
@@ -66,6 +65,7 @@ public class Selenium {
         try {
             //access site through chrome.exe
             //System.setProperty("webdriver.chrome.driver", "chromedriver");
+            //TODO: Change path to match your path
             System.setProperty("webdriver.chrome.driver", "/Users/robbie/Documents/Sr2nd/COMP496/Senior-Project---Lily/Code/src/main/Java/chromedriver");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");

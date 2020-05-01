@@ -1,23 +1,13 @@
+/**
+ * CourseRecommendations looks at the students classes and see if the have their electives and core classes
+ * this classes uses different functions to recommend what should and should not be taken within the next school year.
+ * There are certain electives that needs to be taken more than one of so certain methods keep track of how many of
+ * these electives are left to take.
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-
-/**
- * What was changed:
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * getTakenClasses() -added
- * getCurrentClasses() -added
- * getFinalList() -added
- * getRequiredClasses() -added
- * new student var -added
- * takeThese() -added
- * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * constructor  -edited
- * creatFinalList() -edited
- * toString() -edited
- * globalElectives() -edited
- *
- */
 
 public class CourseRecommendations {
 
@@ -104,7 +94,10 @@ public class CourseRecommendations {
     }
 
 
-    //check electives
+    /**
+     * check for computer science electives
+     * @return computer science elective
+     */
     public String compElectives() {
         ArrayList<String> electives =
                 new ArrayList(Arrays.asList(
@@ -130,6 +123,10 @@ public class CourseRecommendations {
 
     }
 
+    /**
+     * check for science electives
+     * @return science electives
+     */
     public String scienceElectives() {
         ArrayList<String> scienceElectives = new ArrayList(Arrays.asList("phys 241", "phys 242", "chem 106", "chem 107", "biol 100", "biol 101", "slmg 200"));
         sciElectives.addAll(scienceElectives);
@@ -155,6 +152,10 @@ public class CourseRecommendations {
 
     }
 
+    /**
+     * check for math electives
+     * @return math electives
+     */
     public String mathElectives() {
         ArrayList<String> electives = new ArrayList(Arrays.asList("math 340", "math 351"));
         mathElectives.addAll(electives);
@@ -175,6 +176,10 @@ public class CourseRecommendations {
 
     }
 
+    /**
+     * check for a statistic elective
+     * @return statistic elective
+     */
     public String statElectives() {
         ArrayList<String> electives = new ArrayList(Arrays.asList("math 224", "isen 370", "ecen 356"));
         statElectives.addAll(electives);
@@ -193,6 +198,10 @@ public class CourseRecommendations {
         return "Stat Electives needed: " + Math.max(0, eCount) + k + k;
     }
 
+    /**
+     * check for a business elective
+     * @return business elective
+     */
     public String busElectives() {
         ArrayList<String> electives = new ArrayList(Arrays.asList("mgmt 110", "mgmt 132", "mktg 230", "econ 200", "econ 201"));
         busElectives.addAll(electives);
@@ -211,6 +220,10 @@ public class CourseRecommendations {
         return "Business Electives needed: " + Math.max(0, eCount) + k + k;
     }
 
+    /**
+     * check for a social science electives
+     * @return social science electives
+     */
     public String socialSciElectives() {
         ArrayList<String> electives = new ArrayList(Arrays.asList("bued 279", "econ 200", "econ 201", "fcs 135", "fcs 181",
                 "fcs 260", "hist 103", "hist 104", "hist 105", "hist 106", "hist 107", "hist 130", "hist 206", "hist 207", "hist 216",
@@ -229,6 +242,10 @@ public class CourseRecommendations {
         return "Social/ behavior Science Electives needed: " + 1 + k + k;
     }
 
+    /**
+     * check for a history elective
+     * @return history elective
+     */
     public String histElectives() {
         ArrayList<String> electives = new ArrayList(Arrays.asList("engl 333", "engl 334", "hist 103", "hist 106", "hist 107", "libs 202", "musi 220"));
         histElectives.addAll(electives);
@@ -247,6 +264,10 @@ public class CourseRecommendations {
         return "History Electives needed: " + Math.max(0, eCount) + k + k;
     }
 
+    /**
+     * check for a global elective
+     * @return global elective
+     */
     public String globalElectives() {
         ArrayList<String> electives = new ArrayList(Arrays.asList("hist 130", "hist 206", "hist 207", "hist 216", "hist 231", "mgmt 221", "phil 103", "phil 201"));
         globalElectives.addAll(electives);
@@ -263,7 +284,9 @@ public class CourseRecommendations {
         return "Global Awareness Electives needed: " + Math.max(0, eCount) + k + k;
     }
 
-    //fill class info
+    /***
+     * fill class info
+     */
     private void fillClassList() {
         //loads required classes into obj with all pre-recs
 
@@ -287,6 +310,9 @@ public class CourseRecommendations {
         }
     }
 
+    /**
+     * fill in classes that are transfer credits
+     */
     private void fillClassEquivalents() {
         //text has classes that were renamed and transfer credits that transfer over
         try {
@@ -308,6 +334,9 @@ public class CourseRecommendations {
         }
     }
 
+    /**
+     * fill in classes that needs to be taken
+     */
     private void fillClassesToTake() {
         for (classRequirements one : requiredClasses) {
             if (!takenClassNames.contains(one.name)) {
@@ -406,7 +435,12 @@ public class CourseRecommendations {
         Object[] c = r.toArray();
         Arrays.sort(c);
         for (Object f : c) {
-            currClasses += "<li>" + f + "</li>";
+            if(f.equals(" ")){
+                String x = f.toString();
+            }else{
+                currClasses += "<li>" + f + "</li>";
+            }
+            System.out.println("1." + f);
         }
         return currClasses + "</ul>";
     }

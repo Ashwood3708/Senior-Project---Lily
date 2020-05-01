@@ -50,11 +50,12 @@ public class loginServlet extends HttpServlet{
         if(aggieAccessLogin.equals(true)){
             usersHomePageData = selenium.checkTranscript();
             if(usersHomePageData != null) {
-                String x = "";
+                // check if user is a senior or not
+                String senior = "";
                 if(usersHomePageData.get(4).equals("<ul></ul>")){
-                    x = "Looks like you're graduating soon!";
+                    senior = "Looks like you're graduating soon!";
                 }else{
-                    x = usersHomePageData.get(4);
+                    senior = usersHomePageData.get(4);
                 }
 
                 // html code that creates the head of the home page (can also see this code in home.html)
@@ -114,7 +115,7 @@ public class loginServlet extends HttpServlet{
                         "        <tr>\n" +
                         "            <td class='recs'>\n" + usersHomePageData.get(2) + "</td>\n" +
                         "            <td class='recs'>\n" + usersHomePageData.get(3) + "</td>\n" +
-                        "            <td class='recs'>\n" + x + "</td>\n" +
+                        "            <td class='recs'>\n" + senior + "</td>\n" +
                         "        </tr>\n" +
                         "        <tr class='header'>\n" +
                         "            <td colspan='3'><img src='files/pre-req.png' alt='Pre Req' class='center'/></td>\n" +

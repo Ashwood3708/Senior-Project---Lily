@@ -1,3 +1,7 @@
+/*****
+ * pdfParser parses through the user transcript and separates the classes
+ * such as major classes, current classes and electives
+ */
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,6 +36,12 @@ public class pdfParser {
         fillMajorClasses();
     }
 
+    /***
+     * Receives the transcript and parses through it
+     * @param text is the transcript
+     * @return true or false if transcript is read through
+     * @throws FileNotFoundException
+     */
     public Boolean readTxt(String text) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(text));
         String line;
@@ -135,6 +145,9 @@ public class pdfParser {
     }
 
     @Override
+    /***
+     * toString method that prints out the student info ... not needed
+     */
     public String toString(){
         String k = System.lineSeparator();
         String m = "major is: " + person.getMajor() +k;
@@ -149,6 +162,13 @@ public class pdfParser {
         return m;
     }
 
+    /***
+     * Get user information if it is a class in general
+     * @param items class
+     * @param creditHours credit hour for class
+     * @param QPoints quality points
+     * @return true or false if the class fills or not
+     */
     public Boolean fillClass( String[] items, String creditHours, String QPoints){
         try{
             int classNameStartPosition = 3;
@@ -179,6 +199,13 @@ public class pdfParser {
         }
     }
 
+    /***
+     * Get user information if it is a transfer class
+     * @param items transfer class
+     * @param creditHours credit hour for class
+     * @param QPoints quality points
+     * @return true or false if the class fills or not
+     */
     public Boolean fillClassT( String[] items, String creditHours, String QPoints){
         try{
             int classNameStartPosition = 2;
@@ -210,6 +237,13 @@ public class pdfParser {
         }
     }
 
+    /***
+     * Get user information if it is a current class
+     * @param items current class
+     * @param creditHours credit hour for class
+     * @param QPoints quality points
+     * @return true or false if the class fills or not
+     */
     public Boolean fillCurrentClasses(String[] items, String creditHours, String QPoints){
         try{
             String concat = "";
@@ -228,6 +262,9 @@ public class pdfParser {
         }
     }
 
+    /*****
+     * populates a gradesList with the different letter grades
+     */
     public void fillGradesList() {
         gradesList.add("A");
         gradesList.add("A-");
@@ -263,8 +300,12 @@ public class pdfParser {
         gradesList.add("TW");
         gradesList.add("TI");
         gradesList.add("TS");
+        gradesList.add("TR");
     }
 
+    /*****
+     * populate an electives list with computer science electives
+     */
     public void fillElectives(){
         electives.add("COMP320");
         electives.add("COMP321");
@@ -280,6 +321,9 @@ public class pdfParser {
 
     }
 
+    /*****
+     * populate an majorClasses list with computer science classes
+     */
     public void fillMajorClasses() {
         majorClasses.add("GEEN111");
         majorClasses.add("COMP121");
@@ -303,6 +347,10 @@ public class pdfParser {
         majorClasses.add("COMP496");
     }
 
+    /***
+     * getMajorGPA() calculates the student's major gpa and returns it
+     * @return major GPA
+     */
     public double getMajorGPA(){
         ArrayList <Class> list = person.getList();
         double Qpoints=0.0, creditHours =0.0;
@@ -315,6 +363,10 @@ public class pdfParser {
         return (Qpoints/creditHours);
     }
 
+    /***
+     * gets the person information and return in
+     * @return person inf0
+     */
     public Student getPerson(){
         return person;
     }
@@ -322,7 +374,7 @@ public class pdfParser {
     /**
      * Gets total GPA, major GPA, and Class Recommendations list from Student's person object and send it to
      * Selenium.java to be updated on front end.
-     * @return
+     * @return total GPA and Major GPA
      */
     public String getUserInfo(){
         return person.getTotalGPA() + " " + person.getMajorGPA();
