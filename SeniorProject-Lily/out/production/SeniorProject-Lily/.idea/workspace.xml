@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="" />
+    <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +125,9 @@
       <workItem from="1587420416921" duration="8710000" />
       <workItem from="1587431537843" duration="587000" />
       <workItem from="1587476227468" duration="15216000" />
-      <workItem from="1587748809485" duration="260000" />
+      <workItem from="1587748809485" duration="12008000" />
+      <workItem from="1587843362620" duration="651000" />
+      <workItem from="1587853590207" duration="596000" />
     </task>
     <task id="LOCAL-00001" summary="recommendations version 1">
       <created>1585863056403</created>
@@ -195,15 +199,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="put all .jars in libs folder" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/pdfParser.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="items" />
