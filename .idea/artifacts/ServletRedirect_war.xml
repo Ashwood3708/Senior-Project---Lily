@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ServletRedirect:war">
-    <output-path>$PROJECT_DIR$/Code/target</output-path>
-    <root id="archive" name="ServletRedirect.war">
-      <element id="artifact" artifact-name="ServletRedirect:war exploded" />
-    </root>
-  </artifact>
-</component>

@@ -66,7 +66,7 @@ public class Selenium {
             //access site through chrome.exe
             //System.setProperty("webdriver.chrome.driver", "chromedriver");
             //TODO: Change path to match your path
-            System.setProperty("webdriver.chrome.driver", "/Users/robbie/Documents/Sr2nd/COMP496/Senior-Project---Lily/Code/src/main/Java/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
 
@@ -108,6 +108,7 @@ public class Selenium {
             return true;
         }catch (Exception e){
             System.out.println("incorrect login");
+            System.out.println(e);
             driver.quit();
             //System.exit(-1);
             return false;

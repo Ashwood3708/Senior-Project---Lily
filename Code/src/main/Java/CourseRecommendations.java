@@ -440,7 +440,7 @@ public class CourseRecommendations {
             }else{
                 currClasses += "<li>" + f + "</li>";
             }
-            System.out.println("1." + f);
+            //System.out.println("1." + f);
         }
         return currClasses + "</ul>";
     }
