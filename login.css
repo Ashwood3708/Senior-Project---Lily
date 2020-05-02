@@ -1,0 +1,71 @@
+.wrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+.login-layout{
+    padding: 3em 0 1em;
+}
+div{
+    display: block;
+}
+body{
+    /* #002D74, #003b99 */
+    background-size: cover;
+    background: linear-gradient(to top, #002D74, #000000) fixed;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-aggie{
+    width: 35%;
+    margin: 3em auto;
+    background: rgba(0, 0, 0, 0.18);
+    background-size: cover;
+}
+.login-content{
+    padding: 3em;
+}
+input.banner{
+    margin: 2em 0;
+}
+input[type="text"], input[type="password"]{
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: 100;
+    width: 94.5%;
+    display: block;
+    padding: 0.8em;
+    border: solid 1px rgba(255, 255, 255, 0.37);
+    background-size: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #ffffff 4%) no-repeat -800px 0;
+    font-family: 'Roboto', SansSerif, sans-serif;
+}
+
+input[type="submit"]{
+    font-size: 0.9em;
+    color: #ffffff;
+    background: #FDB827;
+    outline: none;
+    border: 1px solid #FDB827;
+    cursor: pointer;
+    padding: 0.8em;
+    width: 100%;
+    margin: 2em auto;
+    letter-spacing: 4px;
+    font-family: 'Roboto', SansSerif, sans-serif;
+}
+
+.login-content p{
+    font-size: 1em;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: 'Roboto', SansSerif, sans-serif;
+}
+#check{
+    color: red;
+}

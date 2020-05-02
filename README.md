@@ -17,6 +17,3 @@ Tomcat is used to run Lily on the server. If you are using Intellij, the followi
 4. Beside **Application Server** click **Configure**
 5. Configure the path to the tomcat module in the node_models folder **please chose the tomcat module for your machine**
 6. Add **'Senior-Project---Lily:Web exploded artifact'** to Build
-
-***Note:*** If project doesn't run you may need to check if you have Java 10 or higher.
-If you do not have Java 10 or higher download it [here](https://jdk.java.net/10/).

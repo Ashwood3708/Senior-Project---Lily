@@ -7,7 +7,15 @@
         <element id="file-copy" path="$PROJECT_DIR$/SeniorProject-Lily/out/artifacts/Senior_Project___Lily_Web_exploded/META-INF/MANIFEST.MF" />
       </element>
       <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Selenium" />
+          <element id="library" level="project" name="byte-buddy-1.8.15" />
+          <element id="library" level="project" name="client-combined-3.141.59" />
+          <element id="library" level="project" name="commons-exec-1.3" />
+          <element id="library" level="project" name="okio-1.14.0" />
+          <element id="library" level="project" name="okhttp-3.11.0" />
+          <element id="library" level="project" name="guava-25.0-jre" />
+        </element>
       </element>
     </root>
   </artifact>
