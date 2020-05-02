@@ -1,0 +1,19 @@
+comp 163, geen 163
+comp 167, geen 165
+Math 340, Math 351
+Math 351, Math 351
+mgmt 110, mgmt 132, mktg 230, econ 200, econ 201
+mgmt 132, mgmt 110, mktg 230, econ 200, econ 201
+mktg 230, econ 200, econ 201,mgmt 110, mgmt 132
+econ 200, econ 201,mgmt 110, mgmt 132, mktg 230
+econ 201, econ 200,mgmt 110, mgmt 132, mktg 230
+math 224, isen 370, ecen 356
+isen 370, ecen 356,math 224
+ecen 356, math 224, isen 370
+chem 106, phys 241
+chem 107, phys 242
+phys 241, chem106
+phys 242, chem 107
+biol 100, biol 101, slmg 200
+biol 101, slmg 200, biol 100
+slmg 200, biol 100, biol 101
