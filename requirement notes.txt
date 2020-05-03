@@ -1,6 +1,18 @@
-To run Selenium here are specifications:
+Steps to Run this project 
+------------------------------------------------------------
+1. Download Intellij
+2. open project, make sure folder has a small black box
+3. click File->project structure->modules Tab->dependencies
+4. click plus sign->add library->java->new library->locate the libs folder->ok
+5. add user & pass for aggie access
 
-1. import libs folder- contains needed jar files
+note: If these dont work that means you will have to download:
 
+Selenium Client & WebDriver Language Bindings 
+-https://www.selenium.dev/downloads/
 
-note: these things are in the project folder
+ChromeDriver
+-https://chromedriver.chromium.org/downloads
+
+ps. 
+Also works with other IDEs, just import the jar files in libs folder

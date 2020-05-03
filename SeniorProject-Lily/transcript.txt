@@ -299,6 +299,12 @@ Overall:
   Unofficial Transcript
 COURSES IN PROGRESS       -Top-
 Term: Spring 2020
+Period Comments: The Pass/Fail grading option was offered during
+  the Spring 2020 semester in response to the
+  challenges presented by the coronavirus pandemic.
+  Pass/Fail grades and course withdrawals may be
+  related to course disruptions that occurred during
+  that semester.
 Subject Course Level Title Credit Hours
 COMP 320 UG Fundamentals of Cyber Security
 3.000

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SeniorProject-Lily/Main.class" afterDir="false" />
-    </list>
+    <list default="true" id="ee059358-50ce-44f8-b0f4-a9a0c0a166b5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/all/code imports/Selenium_Files" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -131,6 +127,7 @@
       <workItem from="1587843362620" duration="651000" />
       <workItem from="1587853590207" duration="2642000" />
       <workItem from="1587916779077" duration="566000" />
+      <workItem from="1588541332153" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="recommendations version 1">
       <created>1585863056403</created>
