@@ -65,7 +65,6 @@ public class Selenium {
         try {
             //access site through chrome.exe
             //System.setProperty("webdriver.chrome.driver", "chromedriver");
-            //TODO: Change path to match your path
             System.setProperty("webdriver.chrome.driver", "chromedriver");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
