@@ -1,0 +1,113 @@
+<!--
+login.html is currently used for visual representation. In order to view the login.jsp file, a server has to be run.
+It easier to modify the login.html page for styling and other things for a quick view instead of modifying the
+login.jsp file and then having to run it on a server to view the changes.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <link rel="shortcut icon" href="files/Logo.PNG" type="image/x-icon"/>
+    <title>Lily | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/Class.js"></script>
+    <script type="text/javascript" src="js/Student.js"></script>
+    <script type="text/javascript" src="js/pdfParser.js"></script>
+    <script type="text/javascript" src="js/Recs.js"></script>
+    <script type="text/javascript" src="js/textFiles.js"></script>
+    <script type="text/javascript" src="js/Login.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="application/x-javascript">
+
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+        function clickMe() {
+
+            let banner = document.getElementById("bannerID").value;
+            let pin = document.getElementById("userPIN").value;
+
+            //TODO: this should call the selenium.js file to check if student is real and get the transcript
+            //let text = await go(banner, pin);
+            //TODO: if first todo is complete than the if statement should say if(text != null)
+            if (banner === "admin" && pin === "admin") {
+                //TODO: Comment out 'let text = testTranscript' if above two todo's are complete
+                let text = testTranscript;
+
+                let display = [];
+                try {
+                    split(text);
+                    // splits string by white space (subject to change when list gets added)
+                    let s = getUserInfo().split(" ");
+                    //courseRecommendations = new CourseRecommendations(g.getPerson());
+                    display.push(s[0]);
+                    display.push(s[1]);
+                    let r = getPerson();
+                    generateRec(r);
+                    display.push(getTakenClasses());
+                    display.push(getCurrentClasses());
+                    display.push(getFinalList());
+
+                } catch (e) {
+                    console.log("file not found");
+                    //System.exit(-1);
+                }
+
+                let x = "";
+                if (display[4] === "<ul></ul>") {
+                    x = "Looks like you're graduating soon!";
+                } else {
+                    x = display[4];
+                }
+                write(display, x);
+            } else {
+                // if user logs in incorrectly then it will say user does not exist
+                document.getElementById("error").innerHTML = "User Must Not Be Valid!";
+            }
+
+        }
+
+    </script>
+    <link href="css/login.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body>
+<div class="login-layout wrapper">
+    <img src="files/Logo.PNG" alt="Lily Logo" class="center"/>
+    <div class="login-aggie">
+        <div class="login-content">
+            <p>Log into this website with your Aggie Access credentials.</p>
+            <!-- Login form that calls a Java Servlet so login information can be retrieved -->
+            <form name='form'>
+                <input class="text banner" id="bannerID" type="text" name="banner" placeholder="Banner ID">
+
+                <input class="text" id="userPIN" type="password" name="pin" placeholder="PIN">
+
+                <input type="button" value="Login" id="btn" onclick="clickMe()">
+
+            </form>
+            <p id='error' style='color: red'></p>
+
+            <p>By clicking submit you are aware and you accept that your login credentials will be used to gain access
+                to Aggie Access to retrieve your transcript so algorithms can be performed to calculate certain
+                information. Note that none of your personal information will be stored or used.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

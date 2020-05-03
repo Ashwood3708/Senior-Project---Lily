@@ -1,0 +1,9 @@
+{
+  "name": "Lily",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.7.9",
+    "node": "latest",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
+}

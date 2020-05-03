@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>home</title>
+
+    <script type="text/javascript" src="js/Class.js"></script>
+    <script type="text/javascript" src="js/Student.js"></script>
+    <script type="text/javascript" src="js/pdfParser.js"></script>
+    <script type="text/javascript" src="js/Recs.js"></script>
+    <script type="text/javascript" src="js/textFiles.js"></script>
+
+
+    <script type="text/javascript">
+        function ClickMe(){
+            split(testTranscript);
+            let r = getPerson();
+            generateRec(r);
+            console.log(getUserInfo());
+            console.log(getCurrentClasses());
+            console.log(getTakenClasses());
+            console.log(getFinalList());
+            document.getElementById('p').innerText= toString();
+        }
+    </script>
+</head>
+<body>
+
+<h1>Home Page - test.html</h1>
+<button onclick="ClickMe()">Click ME</button>
+<p id="p"></p>
+
+</body>
+</html>
